@@ -1,0 +1,2837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HRADSTECH SOLUTIONS LTD – Revolutionizing software solutions with HRADSTECH-branded products in AI, HR, and Web Development.">
+  <title>HRADSTECH SOLUTIONS LTD | The Leader in Digital Solutions</title>
+  <!-- Favicons for all browsers and devices -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo1.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo1.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo1.png">
+  <link rel="shortcut icon" href="assets/images/logo1.png">
+  <meta name="theme-color" content="#1e3a8a">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #1e40af;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --accent-dark: #1d4ed8;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --text-light: #94a3b8;
+      --surface: #f8fafc;
+      --surface-secondary: #f1f5f9;
+      --surface-tertiary: #e2e8f0;
+      --border: #cbd5e1;
+      --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+      --gradient-text: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+      --gradient-blue: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      --shadow-sm: 0 1px 3px 0 rgb(59 130 246 / 0.1), 0 1px 2px 0 rgb(59 130 246 / 0.06);
+      --shadow-md: 0 4px 6px -1px rgb(59 130 246 / 0.1), 0 2px 4px -1px rgb(59 130 246 / 0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(59 130 246 / 0.1), 0 4px 6px -2px rgb(59 130 246 / 0.05);
+      --shadow-xl: 0 20px 25px -5px rgb(59 130 246 / 0.1), 0 10px 10px -5px rgb(59 130 246 / 0.04);
+      --shadow-2xl: 0 25px 50px -12px rgb(59 130 246 / 0.25);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--surface);
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(96, 165, 250, 0.03) 0%, transparent 50%);
+      color: var(--text-primary);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+    
+    /* Sophisticated Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(219, 234, 254, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(219, 234, 254, 0.95);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Horizontal scrolling products */
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Ensure products container can scroll */
+    #products-container {
+      width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      background: rgba(255, 0, 0, 0.1) !important; /* Debug background */
+    }
+
+    #products-wrapper {
+      display: flex !important;
+      min-width: max-content;
+      background: rgba(0, 255, 0, 0.1) !important; /* Debug background */
+    }
+    
+
+    /* Products dropdown container */
+    .relative.group {
+      position: relative;
+    }
+
+    /* Ensure dropdown is visible on hover */
+    .group:hover .absolute {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Keep dropdown open when hovering over it */
+    .absolute:hover {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+    }
+
+    /* Ensure dropdown stays open when hovering over dropdown content */
+    .group:hover .absolute,
+    .absolute:hover {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+    }
+
+    /* Dropdown content should be clickable */
+    .absolute {
+      pointer-events: none;
+    }
+
+    .group:hover .absolute {
+      pointer-events: auto;
+    }
+
+    /* Dropdown scrollbar styling */
+    .max-h-96::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .max-h-96::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 3px;
+    }
+
+    .max-h-96::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+
+    .max-h-96::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Add delay to prevent flickering */
+    .group .absolute {
+      transition-delay: 0.1s;
+    }
+
+    /* Logo Styling */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo-container:hover {
+      opacity: 0.85;
+    }
+
+    .logo-container img {
+      height: 160px;
+      width: auto;
+      max-width: 360px;
+      object-fit: contain;
+      background: transparent;
+      mix-blend-mode: normal;
+      padding: 14px 0;
+    }
+
+    /* Ensure transparent background shows properly */
+    .logo-image {
+      background: transparent !important;
+    }
+
+    .group:hover .absolute {
+      transition-delay: 0s;
+    }
+    
+    .nav-link {
+      position: relative;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+    }
+    
+    .nav-link:hover {
+      color: var(--accent);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* 3D AI Logo with Visual Wonder Effects */
+    .ai-logo-container {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      perspective: 1000px;
+    }
+    
+    .ai-logo {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: logo-float 6s ease-in-out infinite;
+    }
+    
+    .ai-letter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #60a5fa 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      transform: translateZ(10px);
+      box-shadow: 
+        0 8px 25px rgba(59, 130, 246, 0.4),
+        0 4px 10px rgba(29, 78, 216, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    
+    .ai-letter::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: logo-shimmer 3s ease-in-out infinite;
+    }
+    
+    .ai-glow {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8, #60a5fa);
+      border-radius: 16px;
+      opacity: 0.6;
+      filter: blur(8px);
+      animation: logo-glow 2s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+    
+    .ai-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    
+    .ai-particles .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: linear-gradient(45deg, #60a5fa, #3b82f6);
+      border-radius: 50%;
+      animation: particle-orbit 4s linear infinite;
+    }
+    
+    .ai-particles .particle:nth-child(1) {
+      animation-delay: 0s;
+      animation-duration: 3s;
+    }
+    
+    .ai-particles .particle:nth-child(2) {
+      animation-delay: 0.6s;
+      animation-duration: 4s;
+    }
+    
+    .ai-particles .particle:nth-child(3) {
+      animation-delay: 1.2s;
+      animation-duration: 3.5s;
+    }
+    
+    .ai-particles .particle:nth-child(4) {
+      animation-delay: 1.8s;
+      animation-duration: 4.2s;
+    }
+    
+    .ai-particles .particle:nth-child(5) {
+      animation-delay: 2.4s;
+      animation-duration: 3.8s;
+    }
+    
+    @keyframes logo-float {
+      0%, 100% { 
+        transform: translateY(0px) rotateX(0deg) rotateY(0deg); 
+      }
+      25% { 
+        transform: translateY(-3px) rotateX(5deg) rotateY(5deg); 
+      }
+      50% { 
+        transform: translateY(-6px) rotateX(0deg) rotateY(10deg); 
+      }
+      75% { 
+        transform: translateY(-3px) rotateX(-5deg) rotateY(5deg); 
+      }
+    }
+    
+    @keyframes logo-shimmer {
+      0% { 
+        transform: translateX(-100%) translateY(-100%) rotate(45deg); 
+      }
+      50% { 
+        transform: translateX(100%) translateY(100%) rotate(45deg); 
+      }
+      100% { 
+        transform: translateX(-100%) translateY(-100%) rotate(45deg); 
+      }
+    }
+    
+    @keyframes logo-glow {
+      0% { 
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      100% { 
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
+    }
+    
+    @keyframes particle-orbit {
+      0% {
+        transform: rotate(0deg) translateX(25px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(360deg) translateX(25px) rotate(-360deg);
+        opacity: 0;
+      }
+    }
+    
+    .ai-logo:hover {
+      animation-play-state: paused;
+      transform: translateY(-8px) rotateX(10deg) rotateY(15deg) scale(1.1);
+    }
+    
+    .ai-logo:hover .ai-glow {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    
+    .ai-logo:hover .ai-particles .particle {
+      animation-duration: 1s;
+    }
+    
+    /* Sophisticated Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      background: var(--gradient-secondary);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      animation: particle-float 15s linear infinite;
+    }
+    
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 6s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 8s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 10s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 12s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 14s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 16s; }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    
+    .hero-title {
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      font-weight: 400;
+    }
+    
+    .hero-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-md);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+      background: var(--accent-dark);
+    }
+    
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: transparent;
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    
+    .btn-secondary:hover {
+      background: var(--surface-secondary);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes particle-float {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+    
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 5px var(--accent-glow); }
+      50% { box-shadow: 0 0 20px var(--accent-glow), 0 0 30px var(--accent-glow); }
+    }
+    
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0px) rotateX(0deg); }
+      50% { transform: translateY(-10px) rotateX(5deg); }
+    }
+    
+    /* Sophisticated Product Cards */
+    .product-card {
+      position: relative;
+      background: #ffffff !important;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 2px solid #3b82f6 !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+      backdrop-filter: blur(10px);
+      width: 320px !important;
+      flex-shrink: 0 !important;
+      min-height: 400px !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 10 !important;
+      display: block !important;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+      border-color: #3b82f6;
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-icon {
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--accent);
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+    }
+    
+    .product-card:hover .product-icon {
+      transform: scale(1.1);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .product-description {
+      color: #374151;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    
+    .product-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .product-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      color: #374151;
+      font-size: 0.95rem;
+    }
+    
+    .product-features li i {
+      color: var(--accent);
+      font-size: 0.875rem;
+    }
+    
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #3b82f6;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .product-cta:hover {
+      color: var(--accent-dark);
+      transform: translateX(4px);
+    }
+    
+    /* Modern Feature Icons */
+    .feature-icon {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.25rem;
+      margin: 0 auto 1.5rem;
+      background: var(--gradient-primary);
+      color: white;
+      font-size: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .stats-card {
+      background: white;
+      border-radius: 16px;
+      color: var(--dark);
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef2f7;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 50px;
+      color: var(--dark);
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+    
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      position: relative;
+      border: 1px solid #eef2f7;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 60px;
+      color: var(--primary);
+      opacity: 0.1;
+      font-family: Georgia, serif;
+    }
+    
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px);
+      background: var(--secondary);
+    }
+    
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .tech-icon {
+      font-size: 40px;
+      color: var(--primary);
+      margin: 0 15px;
+    }
+    
+    .nav-link {
+      color: #334155;
+      font-weight: 500;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary);
+    }
+    
+    .logo-text {
+      color: #1e40af;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    
+    /* Logo styling */
+    .logo-container {
+      height: 70px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Modal styles */
+    .modal-content {
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    #product-modal {
+        padding: 20px 0;
+    }
+
+    #product-modal .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    /* Custom scrollbar for modal */
+    #product-modal .modal-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    #product-modal .modal-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    #product-modal .modal-content::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    #product-modal .modal-content::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+
+    .pricing-option {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: white;
+      width: 100%;
+    }
+
+    .pricing-option:hover, .pricing-option.active {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+    }
+
+    .pricing-option .plan-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+
+    .pricing-option .plan-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+
+    .pricing-option .plan-price span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #64748b;
+    }
+
+    .pricing-option .plan-desc {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        background-attachment: scroll;
+      }
+      
+      .hero::after {
+        height: 50px;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 80px;
+        right: 1rem;
+        width: 250px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        padding: 1.5rem;
+        gap: 1rem;
+        border: 1px solid #eef2f7;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Modern Navigation -->
+  <header class="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-0">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="#home" class="logo-container cursor-pointer">
+            <img src="assets/images/logo1.png" alt="HRADSTECH SOLUTIONS Logo" class="logo-image">
+          </a>
+        </div>
+      
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#products" class="nav-link">Solutions</a>
+          
+          <!-- Products Dropdown -->
+          <div class="relative group">
+            <a href="#products" class="nav-link flex items-center">
+              Products
+              <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <div class="absolute top-full left-0 w-96 bg-white rounded-xl shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 max-h-96 overflow-y-auto">
+              <div class="p-6">
+                <div class="grid grid-cols-1 gap-4">
+                  
+
+                  <!-- HRADSTECH-HR -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('HRADSTECH-HR')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-users text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">HRADSTECH-HR</h3>
+                      <p class="text-sm text-gray-600 mb-2">Smart HR software for employee management</p>
+                      <span class="text-blue-600 text-sm font-medium">Learn more →</span>
+                    </div>
+                  </div>
+
+                  <!-- HRADSTECH-AI -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('HRADSTECH-AI')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-robot text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">HRADSTECH-AI</h3>
+                      <p class="text-sm text-gray-600 mb-2">AI-powered tools and automation solutions</p>
+                      <span class="text-blue-600 text-sm font-medium">Learn more →</span>
+                    </div>
+                  </div>
+
+                  <!-- Web Development -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('Build your dream website or app with us')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-code text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">Web Development</h3>
+                      <p class="text-sm text-gray-600 mb-2">Custom web applications and software systems</p>
+                      <span class="text-blue-600 text-sm font-medium">Contact Us →</span>
+                    </div>
+                  </div>
+
+                  <!-- ExpensAI -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('ExpensAI')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-chart-line text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">ExpensAI</h3>
+                      <p class="text-sm text-gray-600 mb-2">AI-powered expense management platform</p>
+                      <a href="https://expensai.hradstech.co.uk/" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-800">Visit App →</a>
+                    </div>
+                  </div>
+
+
+                  <!-- IntervMate AI -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('IntervMate AI')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-video text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">IntervMate AI</h3>
+                      <p class="text-sm text-gray-600 mb-2">AI-powered interview preparation platform</p>
+                      <a href="https://intervmateai.hradstech.co.uk/" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-800">Visit App →</a>
+                    </div>
+                  </div>
+
+
+                  <!-- DocNest -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('DocNest')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-file-alt text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">DocNest</h3>
+                      <p class="text-sm text-gray-600 mb-2">Document management and collaboration</p>
+                      <a href="https://docnest.hradstech.co.uk/" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-800">Visit App →</a>
+                    </div>
+                  </div>
+
+                  <!-- LifeBoard AI -->
+                  <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer" onclick="scrollToProduct('LifeBoard AI')">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-gray-900 mb-1">LifeBoard AI</h3>
+                      <p class="text-sm text-gray-600 mb-2">AI-powered life planning and goal management</p>
+                      <a href="https://lifeboardai.hradstech.co.uk/" target="_blank" class="text-blue-600 text-sm font-medium hover:text-blue-800">Visit App →</a>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <a href="#products" class="block text-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                    View All Products →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <a href="#about" class="nav-link">About</a>
+          <a href="#careers" class="nav-link">Careers</a>
+          <a href="#testimonials" class="nav-link">Clients</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      
+        <!-- CTA Buttons -->
+        <div class="hidden lg:flex items-center space-x-6">
+          <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Support</a>
+          <a href="#contact" class="btn-primary">Request Demo</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors">
+          <i class="fas fa-bars text-xl"></i>
+      </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sophisticated Hero Section -->
+  <section id="home" class="hero">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            The Leader in <span class="hero-highlight">Digital Solutions</span>
+        </h1>
+          <p class="hero-subtitle">
+            Unifying technology and innovation to power modern businesses. We build smart software solutions: AI agents, HR tools & custom web applications under the HRADSTECH brand.
+          </p>
+          <div class="hero-buttons">
+            <a href="#products" class="btn-primary">
+              <i class="fas fa-rocket"></i>
+              Explore Solutions
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <i class="fas fa-play"></i>
+              Watch Demo
+          </a>
+        </div>
+      </div>
+      
+        <!-- Hero Image with Overlay -->
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+               alt="Modern Office" 
+               class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <h3 class="text-3xl font-bold mb-4 text-blue-500 drop-shadow-2xl" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(59, 130, 246, 0.8);">Innovation at Work</h3>
+            <p class="text-lg text-blue-400 drop-shadow-2xl" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(59, 130, 246, 0.6);">Transforming businesses through cutting-edge technology and digital solutions</p>
+          </div>
+          <div class="absolute top-4 right-4 w-16 h-16 bg-blue-500/20 rounded-full backdrop-blur-sm"></div>
+          <div class="absolute bottom-4 left-4 w-12 h-12 bg-blue-400/20 rounded-full backdrop-blur-sm"></div>
+        </div>
+          </div>
+      
+      <!-- Trust Indicators -->
+      <div class="mt-24">
+        <p class="text-center text-gray-500 text-sm font-medium mb-12">Trusted by Businesses Worldwide</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center group">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <i class="fas fa-users text-white text-2xl"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">20+</div>
+            <div class="text-gray-600 text-sm font-medium">Happy Clients</div>
+          </div>
+          
+          <div class="text-center group">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <i class="fas fa-cube text-white text-2xl"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">10+</div>
+            <div class="text-gray-600 text-sm font-medium">Products</div>
+          </div>
+          
+          <div class="text-center group">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <i class="fas fa-star text-white text-2xl"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">99%</div>
+            <div class="text-gray-600 text-sm font-medium">Satisfaction</div>
+          </div>
+          
+          <div class="text-center group">
+            <div class="w-20 h-20 mx-auto bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <i class="fas fa-headset text-white text-2xl"></i>
+            </div>
+            <div class="text-3xl font-bold text-gray-900 mb-1">24/7</div>
+            <div class="text-gray-600 text-sm font-medium">Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20" style="background: var(--surface);">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">About HRADSTECH SOLUTIONS</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          We're a UK-based startup pioneering innovative software solutions for modern businesses. Founded in 2018, we've grown to serve clients across 15 countries with our cutting-edge solutions.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+               alt="HRADSTECH Team" 
+               class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+          <div class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent rounded-2xl"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <h3 class="text-3xl font-bold mb-4 text-blue-500 drop-shadow-2xl" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(59, 130, 246, 0.8);">Expert Team</h3>
+            <p class="text-lg text-blue-400 drop-shadow-2xl" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8), 0 0 8px rgba(59, 130, 246, 0.6);">Dedicated professionals committed to delivering exceptional digital solutions</p>
+          </div>
+          <div class="absolute -top-4 -right-4 w-16 h-16 bg-blue-500/20 rounded-full backdrop-blur-sm"></div>
+          <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500/20 rounded-full backdrop-blur-sm"></div>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-800">Driving Digital Transformation</h3>
+          <p class="text-gray-600 mb-6">
+            HRADSTECH SOLUTIONS LTD specializes in creating AI agents, automation systems, professional websites, and dedicated platforms like HRADSTECH-HR (Human Resources) and HRADSTECH-AI (AI Tools). Every solution is crafted to be reliable, intuitive, and scalable.
+          </p>
+          <p class="text-gray-600 mb-8">
+            Our mission is to empower businesses with technology that simplifies operations, enhances productivity, and drives growth. We combine technical expertise with deep industry knowledge to deliver solutions that make a real difference.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+              <span class="text-gray-700">UK-Based Company</span>
+            </div>
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+              <span class="text-gray-700">ISO Certified</span>
+            </div>
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+              <span class="text-gray-700">24/7 Support</span>
+            </div>
+            <div class="flex items-center bg-blue-50 p-3 rounded-lg">
+              <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+              <span class="text-gray-700">Data Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Showcase Section -->
+  <section class="py-16" style="background: var(--surface);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Transforming Businesses Through <span class="text-blue-600">Innovation</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          See how our solutions are making a real impact across industries
+        </p>
+      </div>
+      
+      <div class="relative mb-16">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+             alt="Data Analytics Dashboard" 
+             class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent rounded-2xl"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <h3 class="text-4xl font-bold mb-4 text-white drop-shadow-lg">Data-Driven Insights</h3>
+          <p class="text-xl text-white drop-shadow-md">Transform raw data into actionable business intelligence that drives growth and efficiency</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sophisticated Products Section -->
+  <section id="products" class="py-24" style="background: var(--gradient-blue);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Discover the <span class="text-blue-600">unified solutions</span> used by hundreds of brands
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Elevate your business operations with our comprehensive suite of digital solutions designed to drive growth and efficiency.
+        </p>
+      </div>
+      
+      <!-- Horizontal Scrolling Products Container -->
+      <div class="relative group">
+        <!-- Scroll Buttons -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="scrollProducts('left')" id="scroll-left-btn">
+          <i class="fas fa-chevron-left text-gray-600"></i>
+        </button>
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 opacity-0 group-hover:opacity-100" onclick="scrollProducts('right')" id="scroll-right-btn">
+          <i class="fas fa-chevron-right text-gray-600"></i>
+        </button>
+
+        <!-- Products Scroll Container -->
+        <div class="overflow-x-auto scrollbar-hide" id="products-container">
+          <div class="flex space-x-6 pb-4" id="products-wrapper">
+        <!-- Product Card 2 -->
+        <div class="product-card flex-shrink-0 w-80" data-product="HRADSTECH-HR">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2347&q=80" 
+               alt="HR Management" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+            <i class="fas fa-users"></i>
+            </div>
+          <h3 class="product-title">HRADSTECH-HR</h3>
+          <p class="product-description">
+              Smart HR software to manage employees, leaves, payroll, and performance all in one place—ideal for modern companies.
+            </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> Employee Management</li>
+            <li><i class="fas fa-check text-green-500"></i> Payroll Processing</li>
+            <li><i class="fas fa-check text-green-500"></i> Performance Tracking</li>
+            </ul>
+          <a href="#" class="product-cta">
+            Learn more <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        
+        <!-- Product Card 3 -->
+        <div class="product-card flex-shrink-0 w-80" data-product="HRADSTECH-AI">
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+               alt="AI Technology" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+            <i class="fas fa-robot"></i>
+            </div>
+          <h3 class="product-title">HRADSTECH-AI</h3>
+          <p class="product-description">
+              AI-powered tools and agents to automate your workflows, chatbots for customer support, and tailored machine learning solutions.
+            </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> Workflow Automation</li>
+            <li><i class="fas fa-check text-green-500"></i> Intelligent Chatbots</li>
+            <li><i class="fas fa-check text-green-500"></i> Predictive Analytics</li>
+            </ul>
+          <a href="#" class="product-cta">
+            Learn more <i class="fas fa-arrow-right"></i>
+          </a>
+          </div>
+        
+        <!-- Product Card 4 -->
+        <div class="product-card flex-shrink-0 w-80" data-product="Build your dream website or app with us">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" 
+               alt="Web Development" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="product-title">Build your dream website or app with us</h3>
+          <p class="product-description">
+            We provide end-to-end solutions for building websites, web applications, and software systems — from design and development to data management and ongoing support.
+          </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> Custom Web Development</li>
+            <li><i class="fas fa-check text-green-500"></i> E-commerce Platforms</li>
+            <li><i class="fas fa-check text-green-500"></i> Enterprise Applications</li>
+          </ul>
+          <a href="#" class="product-cta">
+            Contact Us <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Additional Apps -->
+        <!-- ExpensAI -->
+        <div class="product-card flex-shrink-0 w-80" data-product="ExpensAI">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+               alt="ExpensAI" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="product-title">ExpensAI</h3>
+          <p class="product-description">
+            AI-powered expense management and financial analytics platform. Track expenses, generate reports, and optimize your financial workflow.
+          </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> AI Expense Tracking</li>
+            <li><i class="fas fa-check text-green-500"></i> Financial Analytics</li>
+            <li><i class="fas fa-check text-green-500"></i> Report Generation</li>
+          </ul>
+          <a href="https://expensai.hradstech.co.uk/" target="_blank" class="product-cta">
+            Visit App <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+
+        <!-- IntervMate AI -->
+        <div class="product-card flex-shrink-0 w-80" data-product="IntervMate AI">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+               alt="IntervMate AI" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3 class="product-title">IntervMate AI</h3>
+          <p class="product-description">
+            AI-powered interview preparation and practice platform. Get personalized feedback and improve your interview skills.
+          </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> AI Interview Practice</li>
+            <li><i class="fas fa-check text-green-500"></i> Personalized Feedback</li>
+            <li><i class="fas fa-check text-green-500"></i> Skill Assessment</li>
+          </ul>
+          <a href="https://intervmateai.hradstech.co.uk/" target="_blank" class="product-cta">
+            Visit App <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+
+        <!-- DocNest -->
+        <div class="product-card flex-shrink-0 w-80" data-product="DocNest">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+               alt="DocNest" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <h3 class="product-title">DocNest</h3>
+          <p class="product-description">
+            Document management and collaboration platform. Store, organize, and collaborate on documents securely.
+          </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> Document Storage</li>
+            <li><i class="fas fa-check text-green-500"></i> Collaboration Tools</li>
+            <li><i class="fas fa-check text-green-500"></i> Version Control</li>
+          </ul>
+          <a href="https://docnest.hradstech.co.uk/" target="_blank" class="product-cta">
+            Visit App <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <!-- LifeBoard AI -->
+        <div class="product-card flex-shrink-0 w-80" data-product="LifeBoard AI">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+               alt="LifeBoard AI" 
+               class="product-image">
+          <div class="product-icon" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="product-title">LifeBoard AI</h3>
+          <p class="product-description">
+            AI-powered life planning and goal management platform. Set goals, track progress, and achieve your dreams with AI assistance.
+          </p>
+          <ul class="product-features">
+            <li><i class="fas fa-check text-green-500"></i> Goal Setting</li>
+            <li><i class="fas fa-check text-green-500"></i> AI Planning</li>
+            <li><i class="fas fa-check text-green-500"></i> Progress Tracking</li>
+          </ul>
+          <a href="https://lifeboardai.hradstech.co.uk/" target="_blank" class="product-cta">
+            Visit App <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Success Stories Visual -->
+  <section class="py-16" style="background: var(--surface-secondary);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Success Stories from <span class="text-blue-600">Real Clients</span>
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          See how we've helped businesses transform their operations
+        </p>
+      </div>
+      
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+             alt="Retail Success" 
+             class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent rounded-2xl"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <h3 class="text-4xl font-bold mb-4 text-white drop-shadow-lg">40% Efficiency Increase</h3>
+          <p class="text-xl text-white drop-shadow-md">Business operations transformed with our solutions, delivering measurable results</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sophisticated Client Testimonials Section -->
+  <section id="testimonials" class="py-24" style="background: var(--surface);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          What Our <span class="text-blue-600">Clients Say</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Don't just take our word for it. Here's what our clients have to say about working with us.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                 alt="Sarah Johnson" 
+                 class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg">Sarah Johnson</h4>
+              <p class="text-gray-600 text-sm">CTO, RetailTech Inc.</p>
+          </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            "HRADSTECH's solutions transformed our business operations. We've seen a 40% increase in efficiency and our customers love the seamless experience. The support team is incredibly responsive."
+          </p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                 alt="Michael Chen" 
+                 class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg">Michael Chen</h4>
+              <p class="text-gray-600 text-sm">HR Director, TechGlobal</p>
+          </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            "Implementing HRADSTECH-HR has saved our HR team 15 hours per week. The automated payroll processing and employee self-service portal have been game-changers for our organization."
+          </p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                 alt="Alex Rodriguez" 
+                 class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-gray-900 text-lg">Alex Rodriguez</h4>
+              <p class="text-gray-600 text-sm">CEO, Digital Solutions</p>
+          </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            "HRADSTECH's custom web development team built us a stunning e-commerce platform that increased our online sales by 60%. Their attention to detail and modern design approach is exceptional."
+          </p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sophisticated Careers Section -->
+  <section id="careers" class="py-24" style="background: var(--surface-secondary);">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Careers Hero -->
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Build Your <span class="text-blue-600">Future</span> With Us
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+          Whether you're passionate about technology, people, creativity, or innovation, there's room for you to develop an exciting career with us. Join our team and make an impact that matters.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#career-opportunities" class="btn-primary">
+            <i class="fas fa-search"></i>
+            View Open Positions
+          </a>
+          <a href="#career-benefits" class="btn-secondary">
+            <i class="fas fa-heart"></i>
+            Why Work With Us
+          </a>
+        </div>
+      </div>
+      
+      <!-- Career Visual Showcase -->
+      <div class="relative mb-20">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+             alt="Team Collaboration" 
+             class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent rounded-2xl"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <h3 class="text-4xl font-bold mb-4 text-white drop-shadow-lg">Collaborative Environment</h3>
+          <p class="text-xl text-white drop-shadow-md">Work with talented professionals in a supportive team that values innovation and growth</p>
+        </div>
+      </div>
+      
+      <!-- Career Categories -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div class="text-center group">
+          <div class="w-20 h-20 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+            <i class="fas fa-code text-2xl text-blue-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Technology</h3>
+          <p class="text-gray-600 text-sm">Software development, AI, data science, and engineering roles</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 mx-auto bg-green-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+            <i class="fas fa-users text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Consulting</h3>
+          <p class="text-gray-600 text-sm">Business strategy, digital transformation, and client solutions</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 mx-auto bg-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+            <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Analytics</h3>
+          <p class="text-gray-600 text-sm">Data analysis, business intelligence, and insights</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
+            <i class="fas fa-cogs text-2xl text-orange-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Operations</h3>
+          <p class="text-gray-600 text-sm">Project management, support, and business operations</p>
+        </div>
+      </div>
+
+      <!-- Featured Opportunities -->
+      <div id="career-opportunities" class="mb-20">
+        <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Featured Opportunities</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Job Card 1 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-laptop-code text-blue-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Full-time</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Senior Software Developer</h4>
+            <p class="text-gray-600 mb-4">Lead development of our flagship products using modern technologies and best practices.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Node.js</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">AWS</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">London, UK</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job Card 2 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-brain text-green-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Full-time</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">AI Solutions Architect</h4>
+            <p class="text-gray-600 mb-4">Design and implement AI-powered solutions for enterprise clients across various industries.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Python</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">TensorFlow</span>
+              <span class="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">ML</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Remote</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job Card 3 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-chart-bar text-purple-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Full-time</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Business Analyst</h4>
+            <p class="text-gray-600 mb-4">Analyze business processes and recommend technology solutions to improve efficiency.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">SQL</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Power BI</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Analytics</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Manchester, UK</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job Card 4 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-mobile-alt text-orange-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Full-time</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Mobile App Developer</h4>
+            <p class="text-gray-600 mb-4">Create innovative mobile applications for iOS and Android platforms.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">React Native</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">Swift</span>
+              <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">Kotlin</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Birmingham, UK</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job Card 5 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-shield-alt text-red-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Full-time</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Cybersecurity Specialist</h4>
+            <p class="text-gray-600 mb-4">Protect our systems and client data with advanced security measures and monitoring.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Security</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Penetration Testing</span>
+              <span class="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Compliance</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Edinburgh, UK</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+
+          <!-- Job Card 6 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-indigo-600"></i>
+              </div>
+              <span class="text-sm text-gray-500">Internship</span>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-2">Software Development Intern</h4>
+            <p class="text-gray-600 mb-4">Gain hands-on experience working on real projects with our development team.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">Learning</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">Mentorship</span>
+              <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">Growth</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-500 text-sm">Various Locations</span>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Work With Us -->
+      <div id="career-benefits" class="bg-gray-50 rounded-3xl p-12 mb-20">
+        <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Why Work With Us?</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-rocket text-2xl text-blue-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Career Growth</h4>
+            <p class="text-gray-600">Continuous learning opportunities, mentorship programs, and clear career progression paths.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-heart text-2xl text-green-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Work-Life Balance</h4>
+            <p class="text-gray-600">Flexible working arrangements, remote options, and comprehensive wellness programs.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-users text-2xl text-purple-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Inclusive Culture</h4>
+            <p class="text-gray-600">Diverse, inclusive environment where everyone's unique perspectives are valued and celebrated.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-trophy text-2xl text-orange-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Recognition & Rewards</h4>
+            <p class="text-gray-600">Competitive compensation, performance bonuses, and recognition for outstanding contributions.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-lightbulb text-2xl text-red-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Innovation</h4>
+            <p class="text-gray-600">Work on cutting-edge projects and be part of shaping the future of technology.</p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-handshake text-2xl text-indigo-600"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-gray-900 mb-3">Team Collaboration</h4>
+            <p class="text-gray-600">Collaborate with talented professionals in a supportive, team-oriented environment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee Success Stories -->
+      <div class="mb-20">
+        <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Success Stories</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+          <div class="flex items-center mb-6">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                   alt="David Chen" 
+                   class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+                <h4 class="text-lg font-semibold text-gray-900">David Chen</h4>
+                <p class="text-gray-600">Senior Software Engineer</p>
+            </div>
+          </div>
+            <p class="text-gray-700 italic mb-4">
+              "I joined HRADSTECH as a junior developer and within 2 years, I was leading a team of 5 developers. The mentorship and growth opportunities here are incredible."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+          <div class="flex items-center mb-6">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                   alt="Sarah Williams" 
+                   class="w-16 h-16 rounded-full object-cover mr-4">
+            <div>
+                <h4 class="text-lg font-semibold text-gray-900">Sarah Williams</h4>
+                <p class="text-gray-600">AI Solutions Architect</p>
+            </div>
+          </div>
+            <p class="text-gray-700 italic mb-4">
+              "The work-life balance here is amazing. I can work remotely when needed and still be part of groundbreaking AI projects. It's the perfect combination."
+            </p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Application Process -->
+      <div class="bg-blue-50 rounded-3xl p-12 text-center">
+        <h3 class="text-3xl font-bold text-gray-900 mb-6">Ready to Join Our Team?</h3>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Our application process is simple and transparent. We value diverse perspectives and welcome applications from all backgrounds.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-2">Apply Online</h4>
+            <p class="text-gray-600">Submit your application through our simple online form</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-2">Initial Review</h4>
+            <p class="text-gray-600">Our team reviews your application and skills</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+            <h4 class="text-lg font-semibold text-gray-900 mb-2">Interview</h4>
+            <p class="text-gray-600">Meet with our team and discuss your potential</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary text-lg px-8 py-4">
+          <i class="fas fa-paper-plane mr-2"></i>
+          Start Your Application
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started Visual Section -->
+  <section class="py-16" style="background: var(--surface);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Ready to <span class="text-blue-600">Transform</span> Your Business?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Join hundreds of businesses already using our solutions
+        </p>
+      </div>
+      
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+             alt="Modern Business" 
+             class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent rounded-2xl"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <h3 class="text-4xl font-bold mb-4 text-white drop-shadow-lg">Start Your Journey</h3>
+          <p class="text-xl text-white drop-shadow-md">Free consultation and custom solutions tailored to your business needs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sophisticated Contact Section -->
+  <section id="contact" class="py-24" style="background: var(--gradient-blue);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Ready to Talk? <span class="text-blue-600">We Are, Too.</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Have questions or ready to get started? Reach out to our team and we'll get back to you within 24 hours.
+              </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+                  <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              We're here to help you transform your business with our innovative digital solutions. Let's discuss how we can work together.
+            </p>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-map-marker-alt text-blue-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Our Office</h4>
+                <p class="text-gray-600">144 Leeds Road, Heckmondwike, United Kingdom</p>
+                  </div>
+                </div>
+                
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-phone text-green-600"></i>
+              </div>
+                  <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Call Us</h4>
+                <p class="text-gray-600">+44 07767946772</p>
+                  </div>
+                </div>
+                
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-envelope text-purple-600"></i>
+              </div>
+                  <div>
+                <h4 class="font-semibold text-gray-900 mb-1">Email Us</h4>
+                <p class="text-gray-600">info@hradstech.co.uk</p>
+                  </div>
+                </div>
+              </div>
+              
+          <div class="pt-8">
+            <h4 class="font-semibold text-gray-900 mb-4">Follow Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors">
+                <i class="fab fa-instagram"></i>
+              </a>
+                </div>
+              </div>
+            </div>
+            
+        <!-- Contact Form -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+          <form action="https://formsubmit.co/info@hradstech.co.uk" method="POST" class="space-y-6">
+                <input type="hidden" name="_subject" value="New Inquiry from HRADSTECH Solutions Website">
+                
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                <input type="text" name="name" placeholder="Your Name" required 
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input type="email" name="email" placeholder="Your Email" required 
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+              <input type="text" name="subject" placeholder="Subject" 
+                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea name="message" placeholder="Your Message" rows="4" required 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+          </div>
+            
+            <button type="submit" class="w-full btn-primary">
+              <i class="fas fa-paper-plane mr-2"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern Footer -->
+  <footer class="text-white" style="background: var(--primary);">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+      <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
+        <!-- Company Info -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center mb-6">
+            <img src="assets/images/logo1.png" alt="HRADSTECH SOLUTIONS Logo" class="h-28 w-auto logo-image" style="object-fit: contain; background: transparent;">
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Transforming businesses through innovative software solutions since 2018. We're committed to delivering excellence in every project.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Products -->
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Products</h4>
+          <ul class="space-y-3">
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">HRADSTECH-HR</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">HRADSTECH-AI</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Custom Solutions</a></li>
+          </ul>
+        </div>
+        
+        <!-- Company -->
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Our Clients</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Partners</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        
+        <!-- Resources -->
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Support</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Newsletter -->
+      <div class="border-t border-gray-800 pt-8 mb-8">
+        <div class="max-w-md">
+          <h4 class="text-lg font-semibold mb-4">Stay Updated</h4>
+          <p class="text-gray-400 mb-4">
+            Subscribe to our newsletter for the latest updates and insights.
+          </p>
+          <form class="flex">
+            <input type="email" placeholder="Enter your email" 
+                   class="flex-1 bg-gray-800 rounded-l-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 rounded-r-lg px-6 py-3 transition-colors">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm">
+          &copy; 2025 HRADSTECH SOLUTIONS LTD. All rights reserved.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="privacy-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+          <a href="terms-of-service.html" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+          <a href="cookie-policy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Modal -->
+  <div id="product-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden overflow-y-auto">
+    <div class="modal-content bg-white rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-4 my-8 relative transform scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
+      <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-2xl z-10">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="text-center">
+        <div id="modal-icon-container" class="mx-auto mb-6">
+            <!-- Font Awesome Icon Container -->
+            <div id="modal-fa-icon-container" class="w-20 h-20 mx-auto flex items-center justify-center bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full text-white text-4xl shadow-lg">
+                <i id="modal-icon" class="fas fa-cogs"></i>
+            </div>
+            <!-- HR Logo Image Container -->
+            <div id="modal-hr-image-container" class="hidden w-24 h-24 mx-auto">
+                <img src="assets/images/logo1.png" alt="HRADSTECH-HR Logo" class="w-full h-full object-contain logo-image" style="background: transparent;">
+            </div>
+        </div>
+
+        <h3 id="modal-product-title" class="text-2xl font-bold text-gray-800 mb-3">Product Name</h3>
+        
+        <!-- Generic Coming Soon Message -->
+        <div id="coming-soon-content">
+            <p class="text-gray-600">
+            We're putting the finishing touches on this product to ensure it's perfect for you. It will be available soon. Thank you for your interest!
+            </p>
+        </div>
+
+
+        <!-- HRADSTECH-HR Pricing Content -->
+        <div id="hr-pricing-content" class="hidden">
+            <p class="mt-4 text-lg text-gray-600 mb-8">Simple, Transparent Plans for Every Business</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Starter -->
+                <a href="https://hr.hradstech.co.uk" target="_blank" class="block border p-6 rounded-lg shadow text-left hover:shadow-lg hover:border-blue-500 transition">
+                    <h3 class="text-xl font-semibold text-center">Starter</h3>
+                    <p class="mt-4 text-4xl font-bold text-blue-600 text-center">$30<span class="text-lg text-gray-500">/month</span></p>
+                    <p class="text-gray-500 mt-2 text-center">+ $5 per employee</p>
+                    <ul class="mt-6 text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Employee Directory</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Leave Management</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Onboarding</li>
+                    </ul>
+                    <div class="mt-6 w-full bg-blue-600 text-white py-2 rounded text-center">Get Started</div>
+                </a>
+
+                <!-- Business -->
+                <a href="https://hr.hradstech.co.uk" target="_blank" class="block border-2 border-blue-600 p-6 rounded-lg shadow-lg bg-gray-50 text-left relative hover:shadow-xl transition">
+                    <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                        <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">Most Popular</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center">Business</h3>
+                    <p class="mt-4 text-4xl font-bold text-blue-600 text-center">$50<span class="text-lg text-gray-500">/month</span></p>
+                    <p class="text-gray-500 mt-2 text-center">+ $8 per employee</p>
+                    <ul class="mt-6 text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All Starter Features</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Attendance & Timesheets</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Performance Reviews</li>
+                    </ul>
+                    <div class="mt-6 w-full bg-blue-600 text-white py-2 rounded text-center">Start Free Trial</div>
+                </a>
+
+                <!-- Enterprise -->
+                <a href="https://hr.hradstech.co.uk" target="_blank" class="block border p-6 rounded-lg shadow text-left hover:shadow-lg hover:border-blue-500 transition">
+                    <h3 class="text-xl font-semibold text-center">Enterprise</h3>
+                    <p class="mt-4 text-4xl font-bold text-blue-600 text-center">$100<span class="text-lg text-gray-500">/month</span></p>
+                    <p class="text-gray-500 mt-2 text-center">+ $10 per employee</p>
+                    <ul class="mt-6 text-sm text-gray-700 space-y-2">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>All Business Features</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Payroll Integration</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Advanced Analytics</li>
+                    </ul>
+                    <div class="mt-6 w-full bg-blue-600 text-white py-2 rounded text-center">Contact Sales</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Custom Applications & Websites Content -->
+        <div id="custom-apps-content" class="hidden">
+            <!-- Hero Pricing Section -->
+            <div class="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-white text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+                <div class="relative z-10">
+                    <h4 class="text-4xl font-bold mb-4">Build Your Website With Us</h4>
+                    <div class="text-6xl font-black mb-2">Just from <span class="text-yellow-300 animate-pulse">£99</span></div>
+                    <p class="text-2xl text-green-100 mb-4 font-semibold">You heard it right!</p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm mb-6">
+                        <span class="bg-white bg-opacity-25 px-6 py-3 rounded-full font-semibold backdrop-blur-sm">✓ No Hidden Charges</span>
+                        <span class="bg-white bg-opacity-25 px-6 py-3 rounded-full font-semibold backdrop-blur-sm">✓ No Commitments</span>
+                        <span class="bg-white bg-opacity-25 px-6 py-3 rounded-full font-semibold backdrop-blur-sm">✓ Full Ownership</span>
+                        <span class="bg-white bg-opacity-25 px-6 py-3 rounded-full font-semibold backdrop-blur-sm">✓ 30-Day Money Back</span>
+                    </div>
+                    <div class="text-lg text-green-100">
+                        <span class="line-through opacity-75">Regular Price: £299</span> 
+                        <span class="ml-2 bg-red-500 px-3 py-1 rounded-full text-sm font-bold">67% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl p-8 mb-8">
+                <h5 class="text-3xl font-bold text-gray-800 mb-6 text-center">Why Choose HRADSTECH for Your Digital Solutions?</h5>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                        <div class="bg-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-award text-white text-3xl"></i>
+                        </div>
+                        <h6 class="text-xl font-bold text-gray-800 mb-2">5+ Years Experience</h6>
+                        <p class="text-gray-600">Proven track record with 200+ successful projects delivered on time and within budget</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                        <div class="bg-green-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-white text-3xl"></i>
+                        </div>
+                        <h6 class="text-xl font-bold text-gray-800 mb-2">Fast Turnaround</h6>
+                        <p class="text-gray-600">Your website ready in 7-14 days with our streamlined development process</p>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-xl shadow-sm">
+                        <div class="bg-purple-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h6 class="text-xl font-bold text-gray-800 mb-2">100% Secure</h6>
+                        <p class="text-gray-600">Enterprise-grade security with SSL certificates, regular backups, and monitoring</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comprehensive Services Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Web Development -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 rounded-lg p-3 mr-4">
+                            <i class="fas fa-globe text-white text-xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800">Professional Web Development</h5>
+                    </div>
+                    <p class="text-gray-600 mb-4">Create stunning, high-performance websites that convert visitors into customers</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Custom Business Websites (5-50 pages)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Mobile-First Responsive Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Advanced SEO Optimization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Lightning-Fast Loading (90+ PageSpeed)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Modern UI/UX Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Contact Forms & Lead Generation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Google Analytics Integration</li>
+                    </ul>
+                </div>
+
+                <!-- E-commerce Solutions -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 rounded-lg p-3 mr-4">
+                            <i class="fas fa-shopping-cart text-white text-xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800">E-commerce Platforms</h5>
+                    </div>
+                    <p class="text-gray-600 mb-4">Build powerful online stores that drive sales and grow your business</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Complete Online Store Setup</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Multiple Payment Gateways (Stripe, PayPal)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Advanced Inventory Management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Order Processing & Tracking</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Customer Dashboard & Accounts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Product Reviews & Ratings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-600 mr-2"></i>Email Marketing Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Web Applications -->
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6 border border-purple-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-600 rounded-lg p-3 mr-4">
+                            <i class="fas fa-laptop-code text-white text-xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800">Custom Web Applications</h5>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tailored software solutions that streamline your business operations</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Custom Business Applications</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>CRM & Customer Management Systems</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>API Development & Third-party Integration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Real-time Chat & Notifications</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>User Authentication & Role Management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Data Visualization & Reporting</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Workflow Automation</li>
+                    </ul>
+                </div>
+
+                <!-- Hosting & Infrastructure -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 border border-orange-100 hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-600 rounded-lg p-3 mr-4">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <h5 class="text-xl font-bold text-gray-800">Hosting & Infrastructure</h5>
+                    </div>
+                    <p class="text-gray-600 mb-4">Reliable, secure, and scalable hosting solutions for your digital presence</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Premium Cloud Hosting (AWS/Google Cloud)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Domain Registration & SSL Certificates</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Database Setup & Management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Automated Backups & Security</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>Performance Monitoring & Optimization</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>CDN Setup for Global Speed</li>
+                        <li class="flex items-center"><i class="fas fa-check text-orange-600 mr-2"></i>99.9% Uptime Guarantee</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="bg-gray-50 rounded-xl p-8 mb-8">
+                <h5 class="text-2xl font-bold text-gray-800 mb-6 text-center">Our Technology Stack</h5>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fab fa-react text-4xl text-blue-500 mb-2"></i>
+                            <p class="font-semibold text-gray-700">React</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
+                            <p class="font-semibold text-gray-700">Node.js</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fab fa-python text-4xl text-yellow-500 mb-2"></i>
+                            <p class="font-semibold text-gray-700">Python</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <i class="fab fa-aws text-4xl text-orange-500 mb-2"></i>
+                            <p class="font-semibold text-gray-700">AWS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process & Guarantees -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="text-center p-6 bg-blue-50 rounded-xl">
+                    <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h6 class="font-bold text-gray-800 mb-2">Fast Delivery</h6>
+                    <p class="text-gray-600 text-sm">Your website ready in 7-14 days</p>
+                </div>
+                <div class="text-center p-6 bg-green-50 rounded-xl">
+                    <div class="bg-green-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h6 class="font-bold text-gray-800 mb-2">100% Secure</h6>
+                    <p class="text-gray-600 text-sm">Enterprise-grade security included</p>
+                </div>
+                <div class="text-center p-6 bg-purple-50 rounded-xl">
+                    <div class="bg-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h6 class="font-bold text-gray-800 mb-2">24/7 Support</h6>
+                    <p class="text-gray-600 text-sm">Ongoing maintenance & support</p>
+                </div>
+            </div>
+
+            <!-- Enhanced Pricing Tiers -->
+            <div class="bg-gradient-to-r from-gray-50 to-blue-50 rounded-xl p-8 mb-8">
+                <h5 class="text-3xl font-bold text-gray-800 mb-2 text-center">Choose Your Perfect Package</h5>
+                <p class="text-gray-600 text-center mb-8">All packages include hosting, domain, SSL certificate, and 30-day money-back guarantee</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Starter Package - £99 -->
+                    <div class="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-green-500 transition-all shadow-lg hover:shadow-xl">
+                        <div class="text-center mb-6">
+                            <h6 class="text-2xl font-bold text-gray-800 mb-2">Starter Website</h6>
+                            <div class="text-5xl font-black text-green-600 mb-2">£99</div>
+                            <p class="text-gray-500">Perfect for small businesses</p>
+                            <div class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold mt-2 inline-block">67% OFF</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Up to 5 pages</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Mobile-responsive design</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Contact form & lead capture</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Basic SEO optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Google Analytics setup</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>SSL certificate included</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>1 month free support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>7-day delivery</li>
+                        </ul>
+                        <form action="https://formsubmit.co/info@hradstech.co.uk" method="POST" class="w-full">
+                            <input type="hidden" name="_subject" value="New Inquiry - Starter Website Package (£99)">
+                            <input type="hidden" name="package" value="Starter Website (£99)">
+                            <input type="hidden" name="message" value="I'm interested in the Starter Website package for £99. Please contact me for more details.">
+                            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-green-700 transition transform hover:scale-105">Get Started Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Business Package - £299 -->
+                    <div class="bg-white rounded-xl p-8 border-2 border-green-500 relative shadow-xl transform scale-105">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-green-500 text-white px-6 py-2 rounded-full text-sm font-bold">MOST POPULAR</span>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h6 class="text-2xl font-bold text-gray-800 mb-2">Business Website</h6>
+                            <div class="text-5xl font-black text-green-600 mb-2">£299</div>
+                            <p class="text-gray-500">Ideal for growing businesses</p>
+                            <div class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-bold mt-2 inline-block">BEST VALUE</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Up to 15 pages</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>E-commerce ready (up to 50 products)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Advanced SEO optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Payment gateway integration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Customer dashboard</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>Email marketing setup</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>3 months free support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 text-lg"></i>10-day delivery</li>
+                        </ul>
+                        <form action="https://formsubmit.co/info@hradstech.co.uk" method="POST" class="w-full">
+                            <input type="hidden" name="_subject" value="New Inquiry - Business Website Package (£299)">
+                            <input type="hidden" name="package" value="Business Website (£299)">
+                            <input type="hidden" name="message" value="I'm interested in the Business Website package for £299. Please contact me for more details.">
+                            <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-green-700 transition transform hover:scale-105">Choose Business</button>
+                        </form>
+                    </div>
+
+                    <!-- Enterprise Package -->
+                    <div class="bg-white rounded-xl p-8 border-2 border-gray-200 hover:border-purple-500 transition-all shadow-lg hover:shadow-xl">
+                        <div class="text-center mb-6">
+                            <h6 class="text-2xl font-bold text-gray-800 mb-2">Enterprise Solution</h6>
+                            <div class="text-5xl font-black text-purple-600 mb-2">Custom</div>
+                            <p class="text-gray-500">For large organizations</p>
+                            <div class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-bold mt-2 inline-block">PREMIUM</div>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 mb-8">
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Unlimited pages & features</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Custom web applications</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>API development & integration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Advanced analytics & reporting</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Multi-user management</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Priority support & maintenance</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>6 months free support</li>
+                            <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-3 text-lg"></i>Custom timeline</li>
+                        </ul>
+                        <form action="https://formsubmit.co/info@hradstech.co.uk" method="POST" class="w-full">
+                            <input type="hidden" name="_subject" value="New Inquiry - Enterprise Solution (Custom)">
+                            <input type="hidden" name="package" value="Enterprise Solution (Custom)">
+                            <input type="hidden" name="message" value="I'm interested in the Enterprise Solution package. Please contact me to discuss custom requirements and pricing.">
+                            <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg font-bold text-lg hover:bg-purple-700 transition transform hover:scale-105">Contact Sales</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Additional Benefits -->
+                <div class="mt-8 bg-green-50 rounded-xl p-6">
+                    <h6 class="text-xl font-bold text-gray-800 mb-4 text-center">What's Included in Every Package</h6>
+                    <div class="grid md:grid-cols-4 gap-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-rocket text-green-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-semibold text-gray-700">Fast Delivery</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-shield-alt text-green-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-semibold text-gray-700">100% Secure</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-mobile-alt text-green-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-semibold text-gray-700">Mobile Ready</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-headset text-green-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-semibold text-gray-700">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <h5 class="text-2xl font-bold text-gray-800 mb-4">Ready to Transform Your Digital Presence?</h5>
+                <p class="text-gray-600 mb-6">Join 500+ satisfied clients who trust us with their digital solutions</p>
+                
+                <!-- Quick Contact Form -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 mb-6">
+                    <h6 class="text-xl font-bold text-gray-800 mb-4">Get Your Free Quote Now</h6>
+                    <form action="https://formsubmit.co/info@hradstech.co.uk" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="New Website Development Inquiry - Free Quote">
+                        <input type="hidden" name="_next" value="https://hradstech.co.uk/thank-you.html">
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <input type="email" name="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <select name="package" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select Package</option>
+                                <option value="Starter Website (£99)">Starter Website (£99)</option>
+                                <option value="Business Website (£299)">Business Website (£299)</option>
+                                <option value="Enterprise Solution (Custom)">Enterprise Solution (Custom)</option>
+                            </select>
+                        </div>
+                        
+                        <textarea name="message" placeholder="Tell us about your project requirements..." rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button type="submit" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition transform hover:scale-105">
+                                <i class="fas fa-paper-plane mr-2"></i>Send Free Quote Request
+                            </button>
+                            <button type="button" onclick="closeModal()" class="bg-white text-green-600 border-2 border-green-600 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition">
+                                <i class="fas fa-calendar mr-2"></i>Schedule Call
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="text-sm text-gray-500">
+                    <p>✓ Free consultation included</p>
+                    <p>✓ No obligation quote</p>
+                    <p>✓ Response within 24 hours</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Modern Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href.length > 1) {
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+              e.preventDefault();
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }
+        });
+      });
+      
+      // Initialize ScrollReveal with modern animations
+      if (typeof ScrollReveal !== 'undefined') {
+        ScrollReveal().reveal('.hero-content', {
+          delay: 200,
+          distance: '50px',
+          duration: 1000,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          origin: 'bottom',
+          reset: false
+        });
+        
+        ScrollReveal().reveal('.product-card', {
+          delay: 100,
+        distance: '30px',
+        duration: 800,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        origin: 'bottom',
+          interval: 200,
+          reset: false
+        });
+        
+        ScrollReveal().reveal('.feature-icon', {
+          delay: 300,
+          distance: '30px',
+          duration: 800,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        origin: 'bottom',
+          interval: 200,
+          reset: false
+      });
+      }
+
+      // Product Modal Logic
+      const productCards = document.querySelectorAll('.product-card');
+      const modal = document.getElementById('product-modal');
+      const modalContent = modal.querySelector('.modal-content');
+      const closeModalBtn = document.getElementById('close-modal');
+      const modalProductTitle = document.getElementById('modal-product-title');
+      
+      const modalFaIconContainer = document.getElementById('modal-fa-icon-container');
+      const modalHrImageContainer = document.getElementById('modal-hr-image-container');
+      const modalIcon = document.getElementById('modal-icon');
+      
+      const comingSoonContent = document.getElementById('coming-soon-content');
+      const hrPricingContent = document.getElementById('hr-pricing-content');
+      const customAppsContent = document.getElementById('custom-apps-content');
+
+      const openModal = (productName) => {
+        modalProductTitle.textContent = productName;
+
+        // Hide all specific content and icons first
+        posPricingContent.classList.add('hidden');
+        hrPricingContent.classList.add('hidden');
+        comingSoonContent.classList.add('hidden');
+        customAppsContent.classList.add('hidden');
+        modalFaIconContainer.classList.add('hidden');
+        modalHrImageContainer.classList.add('hidden');
+
+        // Show specific content and icon based on product
+        if (productName === 'HRADSTECH-HR') {
+            hrPricingContent.classList.remove('hidden');
+            modalHrImageContainer.classList.remove('hidden');
+        } else if (productName === 'Build your dream website or app with us') {
+            customAppsContent.classList.remove('hidden');
+            modalFaIconContainer.classList.remove('hidden');
+            modalIcon.className = 'fas fa-code';
+        } else { // HRADSTECH-AI or any other
+            comingSoonContent.classList.remove('hidden');
+            modalFaIconContainer.classList.remove('hidden');
+            modalIcon.className = 'fas fa-cogs'; // Default icon
+        }
+
+        // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modalContent.classList.add('scale-100', 'opacity-100');
+          modalContent.classList.remove('scale-95', 'opacity-0');
+        }, 10);
+      };
+
+      const closeModal = () => {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          // Re-enable background scrolling
+          document.body.style.overflow = 'auto';
+        }, 300); // Match transition duration
+      };
+
+      productCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const productName = card.dataset.product;
+          openModal(productName);
+        });
+      });
+
+      closeModalBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Function to pre-fill contact form and scroll to it
+      function scheduleCall() {
+        closeModal();
+        // Pre-fill the contact form
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+          const subjectField = contactForm.querySelector('input[name="subject"]');
+          if (subjectField) {
+            subjectField.value = 'Schedule Consultation Call - Website Development';
+          }
+          const messageField = contactForm.querySelector('textarea[name="message"]');
+          if (messageField) {
+            messageField.value = 'I would like to schedule a consultation call to discuss my website development needs. Please contact me to arrange a convenient time.';
+          }
+        }
+        // Scroll to contact section
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Add event listener to schedule call button
+      document.addEventListener('click', function(e) {
+        if (e.target.textContent.includes('Schedule Call') || e.target.textContent.includes('Schedule Consultation')) {
+          e.preventDefault();
+          scheduleCall();
+        }
+      });
+    });
+
+    // Products horizontal scroll function
+    function scrollProducts(direction) {
+      const container = document.getElementById('products-container');
+      const leftBtn = document.getElementById('scroll-left-btn');
+      const rightBtn = document.getElementById('scroll-right-btn');
+      
+      if (container) {
+        const scrollAmount = 320; // Width of one card + gap
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        const currentScroll = container.scrollLeft;
+        
+        // Prevent scrolling beyond limits
+        if (direction === 'left') {
+          if (currentScroll > 0) {
+            container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+          }
+        } else {
+          if (currentScroll < maxScroll) {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        }
+        
+        // Update button visibility
+        updateScrollButtons();
+      }
+    }
+
+    // Function to update scroll button visibility
+    function updateScrollButtons() {
+      const container = document.getElementById('products-container');
+      const leftBtn = document.getElementById('scroll-left-btn');
+      const rightBtn = document.getElementById('scroll-right-btn');
+      
+      if (container && leftBtn && rightBtn) {
+        const currentScroll = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        
+        // Update left button
+        if (currentScroll <= 5) {
+          leftBtn.style.opacity = '0';
+          leftBtn.style.pointerEvents = 'none';
+        } else {
+          leftBtn.style.opacity = '1';
+          leftBtn.style.pointerEvents = 'auto';
+        }
+        
+        // Update right button
+        if (currentScroll >= maxScroll - 5) {
+          rightBtn.style.opacity = '0';
+          rightBtn.style.pointerEvents = 'none';
+        } else {
+          rightBtn.style.opacity = '1';
+          rightBtn.style.pointerEvents = 'auto';
+        }
+      }
+    }
+
+    // Function to scroll to specific product
+    function scrollToProduct(productName) {
+      const container = document.getElementById('products-container');
+      const productCard = document.querySelector(`[data-product="${productName}"]`);
+      
+      if (container && productCard) {
+        // Scroll to products section first
+        document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        
+        // Then scroll to the specific product
+        setTimeout(() => {
+          const cardOffset = productCard.offsetLeft;
+          const containerWidth = container.clientWidth;
+          const cardWidth = productCard.offsetWidth;
+          
+          // Center the card in the view
+          const scrollPosition = cardOffset - (containerWidth / 2) + (cardWidth / 2);
+          
+          container.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+          
+          // Update button visibility after scroll
+          setTimeout(updateScrollButtons, 500);
+        }, 300);
+      }
+    }
+
+    // Initialize scroll buttons on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('products-container');
+      const leftBtn = document.getElementById('scroll-left-btn');
+      const rightBtn = document.getElementById('scroll-right-btn');
+      const products = document.querySelectorAll('.product-card');
+      
+      
+      if (container && leftBtn && rightBtn) {
+        // Add scroll event listener for real-time updates
+        container.addEventListener('scroll', updateScrollButtons);
+        
+        // Initial button state
+        updateScrollButtons();
+        
+        // Also update on window resize
+        window.addEventListener('resize', function() {
+          setTimeout(updateScrollButtons, 100);
+        });
+      }
+    });
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>
