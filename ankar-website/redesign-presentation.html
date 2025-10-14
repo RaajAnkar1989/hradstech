@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRADSTECH Website Redesign Presentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f0f1a;
+      --secondary: #1a1a2e;
+      --accent: #6d28d9;
+      --accent-light: #8b5cf6;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --surface: #0f0f1a;
+      --surface-secondary: #1a1a2e;
+      --gradient-primary: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%);
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+    }
+    
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      background: var(--surface);
+    }
+    
+    .hero-slide {
+      background: radial-gradient(circle at top right, rgba(109, 40, 217, 0.2) 0%, transparent 40%),
+                  radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.2) 0%, transparent 40%),
+                  var(--surface);
+    }
+    
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(109, 40, 217, 0.5);
+    }
+    
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+      border-color: var(--accent);
+    }
+    
+    .comparison-img {
+      border-radius: 1rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .comparison-img:hover {
+      transform: scale(1.02);
+    }
+    
+    .nav-indicator {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1000;
+    }
+    
+    .nav-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Indicators -->
+  <div class="nav-indicator">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
+    <div class="nav-dot" data-slide="6"></div>
+  </div>
+
+  <!-- Slide 1: Title -->
+  <section class="slide hero-slide">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+          HRADSTECH Website Redesign
+        </span>
+      </h1>
+      <p class="text-2xl text-gray-300 mb-4">Inspired by inkgames.com/studio</p>
+      <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+        A complete transformation of your digital presence with enhanced aesthetics and user experience
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="index-redesign.html" class="btn-primary">
+          <i class="fas fa-rocket"></i>
+          View Redesigned Website
+        </a>
+        <a href="#slide-2" class="btn-primary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fas fa-arrow-down"></i>
+          See Presentation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 2: Inspiration -->
+  <section id="slide-2" class="slide">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-center">Design Inspiration</h2>
+      <p class="text-xl text-gray-300 mb-12 text-center max-w-4xl mx-auto">
+        Taking cues from inkgames.com/studio's sophisticated aesthetic while enhancing it for HRADSTECH's technology focus
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">InkGames Studio Inspiration</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span>Dark, sophisticated color scheme with purple/blue accents</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span>Clean, spacious layout with excellent white space</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span>High-quality imagery and professional photography</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span>Minimalist navigation and clear information hierarchy</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span>Interactive elements and subtle hover effects</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-800 rounded-xl p-6">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Design Inspiration" class="rounded-lg w-full">
+          <p class="text-center text-gray-400 mt-4">inkgames.com/studio aesthetic</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: Key Enhancements -->
+  <section class="slide">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-center">Key Enhancements</h2>
+      <p class="text-xl text-gray-300 mb-12 text-center max-w-4xl mx-auto">
+        Improving upon the inspiration with HRADSTECH's unique value propositions
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Enhanced 3D Cube</h3>
+          <p class="text-gray-300">
+            Refined 3D rotating cube with cleaner design, better animations, and improved visual effects that showcase HRADSTECH's technology focus.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Studio Tour</h3>
+          <p class="text-gray-300">
+            Gallery section showcasing the workspace with professional imagery, hover effects, and overlays that create an immersive experience.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Team Showcase</h3>
+          <p class="text-gray-300">
+            Professional leadership team profiles with hover animations, role highlights, and expertise showcases that build trust.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Responsive Design</h3>
+          <p class="text-gray-300">
+            Fully responsive layout optimized for all devices with adaptive typography, flexible grids, and mobile-first approach.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Performance</h3>
+          <p class="text-gray-300">
+            Optimized for speed with efficient CSS, lightweight JavaScript, and modern web practices for superior user experience.
+          </p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="text-4xl text-purple-500 mb-4">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Visual Design</h3>
+          <p class="text-gray-300">
+            Sophisticated dark theme with glassmorphism effects, improved contrast, and enhanced visual hierarchy for better engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: Before & After Comparison -->
+  <section class="slide">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-center">Before & After Comparison</h2>
+      <p class="text-xl text-gray-300 mb-12 text-center max-w-4xl mx-auto">
+        Visual transformation of the HRADSTECH digital presence
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-center text-red-400">Before (Original Design)</h3>
+          <div class="bg-gray-800 rounded-xl p-4">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Original Design" class="rounded-lg w-full comparison-img">
+          </div>
+          <ul class="mt-6 space-y-2 text-gray-300">
+            <li class="flex items-center"><i class="fas fa-times-circle text-red-500 mr-2"></i> Less sophisticated visual design</li>
+            <li class="flex items-center"><i class="fas fa-times-circle text-red-500 mr-2"></i> Limited visual hierarchy</li>
+            <li class="flex items-center"><i class="fas fa-times-circle text-red-500 mr-2"></i> Basic navigation</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-center text-green-400">After (Redesigned)</h3>
+          <div class="bg-gray-800 rounded-xl p-4">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Redesigned" class="rounded-lg w-full comparison-img">
+          </div>
+          <ul class="mt-6 space-y-2 text-gray-300">
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Sophisticated dark theme with gradients</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Enhanced visual hierarchy and typography</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Modern navigation with smooth scrolling</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: Technology Focus -->
+  <section class="slide">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4 text-center">Technology Focus</h2>
+      <p class="text-xl text-gray-300 mb-12 text-center max-w-4xl mx-auto">
+        Maintaining HRADSTECH's software/tech identity while enhancing the presentation
+      </p>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-2 gap-6">
+          <div class="feature-card text-center">
+            <div class="text-3xl text-purple-500 mb-3">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="font-bold">AI Solutions</h3>
+          </div>
+          
+          <div class="feature-card text-center">
+            <div class="text-3xl text-purple-500 mb-3">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="font-bold">HR Platforms</h3>
+          </div>
+          
+          <div class="feature-card text-center">
+            <div class="text-3xl text-purple-500 mb-3">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="font-bold">Web Apps</h3>
+          </div>
+          
+          <div class="feature-card text-center">
+            <div class="text-3xl text-purple-500 mb-3">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="font-bold">Cloud Solutions</h3>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Preserved Core Identity</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span><strong>Product Offerings:</strong> All HRADSTECH products and services remain prominently featured</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span><strong>Technology Focus:</strong> Enhanced presentation of AI, HR, and web development solutions</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span><strong>Brand Identity:</strong> HRADSTECH branding and messaging maintained throughout</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+              <span><strong>Value Proposition:</strong> Clear communication of digital transformation benefits</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 6: Call to Action -->
+  <section class="slide hero-slide">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">
+        Ready to Transform Your Digital Presence?
+      </h2>
+      <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+        The redesigned HRADSTECH website is ready to showcase your innovation studio with a sophisticated, 
+        modern aesthetic that drives engagement and conversions.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+        <a href="index-redesign.html" class="btn-primary">
+          <i class="fas fa-rocket"></i>
+          Launch Redesigned Website
+        </a>
+        <a href="README-REDESIGN.md" class="btn-primary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fas fa-book"></i>
+          View Documentation
+        </a>
+      </div>
+      
+      <div class="bg-gray-800/50 rounded-2xl p-8 max-w-2xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4">Implementation Summary</h3>
+        <ul class="text-left space-y-3 text-gray-300">
+          <li class="flex items-center"><i class="fas fa-file-code text-purple-500 mr-3"></i> Single HTML file implementation</li>
+          <li class="flex items-center"><i class="fas fa-plug text-purple-500 mr-3"></i> CDN-based dependencies (Tailwind, Font Awesome)</li>
+          <li class="flex items-center"><i class="fas fa-mobile-alt text-purple-500 mr-3"></i> Fully responsive design</li>
+          <li class="flex items-center"><i class="fas fa-bolt text-purple-500 mr-3"></i> Optimized performance</li>
+          <li class="flex items-center"><i class="fas fa-paint-brush text-purple-500 mr-3"></i> Modern visual design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Update active nav dot on scroll
+    window.addEventListener('scroll', function() {
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.nav-dot');
+      
+      slides.forEach((slide, index) => {
+        const rect = slide.getBoundingClientRect();
+        if (rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2) {
+          dots.forEach(dot => dot.classList.remove('active'));
+          if (dots[index]) {
+            dots[index].classList.add('active');
+          }
+        }
+      });
+    });
+    
+    // Nav dot click functionality
+    document.querySelectorAll('.nav-dot').forEach(dot => {
+      dot.addEventListener('click', function() {
+        const slideIndex = this.getAttribute('data-slide');
+        const targetSlide = document.querySelectorAll('.slide')[slideIndex];
+        if (targetSlide) {
+          targetSlide.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRADSTECH Components Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      /* Color System */
+      --primary-50: #f0f9ff;
+      --primary-100: #e0f2fe;
+      --primary-200: #bae6fd;
+      --primary-300: #7dd3fc;
+      --primary-400: #38bdf8;
+      --primary-500: #0ea5e9;
+      --primary-600: #0284c7;
+      --primary-700: #0369a1;
+      --primary-800: #075985;
+      --primary-900: #0c4a6e;
+      
+      --accent-50: #f5f3ff;
+      --accent-100: #ede9fe;
+      --accent-200: #ddd6fe;
+      --accent-300: #c4b5fd;
+      --accent-400: #a78bfa;
+      --accent-500: #8b5cf6;
+      --accent-600: #7c3aed;
+      --accent-700: #6d28d9;
+      --accent-800: #5b21b6;
+      --accent-900: #4c1d95;
+      
+      --success-50: #f0fdf4;
+      --success-100: #dcfce7;
+      --success-200: #bbf7d0;
+      --success-300: #86efac;
+      --success-400: #4ade80;
+      --success-500: #22c55e;
+      --success-600: #16a34a;
+      --success-700: #15803d;
+      --success-800: #166534;
+      --success-900: #14532d;
+      
+      --warning-50: #fffbeb;
+      --warning-100: #fef3c7;
+      --warning-200: #fde68a;
+      --warning-300: #fcd34d;
+      --warning-400: #fbbf24;
+      --warning-500: #f59e0b;
+      --warning-600: #d97706;
+      --warning-700: #b45309;
+      --warning-800: #92400e;
+      --warning-900: #78350f;
+      
+      --dark-50: #f8fafc;
+      --dark-100: #f1f5f9;
+      --dark-200: #e2e8f0;
+      --dark-300: #cbd5e1;
+      --dark-400: #94a3b8;
+      --dark-500: #64748b;
+      --dark-600: #475569;
+      --dark-700: #334155;
+      --dark-800: #1e293b;
+      --dark-900: #0f172a;
+      
+      --gradient-primary: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+      --gradient-secondary: linear-gradient(135deg, var(--accent-500), var(--primary-600));
+      --gradient-tertiary: linear-gradient(135deg, var(--primary-400), var(--success-500));
+      
+      /* Typography */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Space Grotesk', 'Inter', sans-serif;
+      --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+      
+      /* Spacing */
+      --space-3xs: 0.25rem;
+      --space-2xs: 0.5rem;
+      --space-xs: 0.75rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+      
+      /* Border Radius */
+      --radius-xs: 0.25rem;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-2xl: 2rem;
+      --radius-full: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      --shadow-glow: 0 0 30px rgba(14, 165, 233, 0.3);
+      
+      /* Transitions */
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-medium: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-elastic: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background: var(--dark-900);
+      color: var(--dark-100);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      padding: 3rem 0;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--dark-400);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    section {
+      margin-bottom: 4rem;
+    }
+    
+    h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    
+    h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      margin: 2rem 0 1rem;
+    }
+    
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .component-card {
+      background: rgba(30, 41, 59, 0.7);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    
+    .component-preview {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: var(--radius-lg);
+      min-height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .component-code {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      font-family: 'Monaco', 'Consolas', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      color: var(--dark-300);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+    }
+    
+    .component-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .component-description {
+      color: var(--dark-400);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    
+    /* Component Styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all var(--transition-medium);
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow), 0 10px 25px rgba(14, 165, 233, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-400);
+      border: 2px solid var(--primary-500);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--primary-500);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+    
+    .btn-accent {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    }
+    
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.3), 0 10px 25px rgba(139, 92, 246, 0.4);
+    }
+    
+    .feature-card {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-xl);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all var(--transition-medium);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity var(--transition-medium);
+      z-index: -1;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(14, 165, 233, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), var(--shadow-glow);
+    }
+    
+    .feature-card:hover::before {
+      opacity: 0.05;
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-md);
+      background: var(--gradient-primary);
+      border-radius: var(--radius-xl);
+      font-size: 1.75rem;
+      color: white;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .feature-title {
+      margin-bottom: var(--space-sm);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    
+    .feature-description {
+      margin-bottom: var(--space-md);
+      color: var(--dark-300);
+    }
+    
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      color: var(--primary-400);
+      font-weight: 600;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+    
+    .feature-link:hover {
+      color: var(--primary-300);
+      gap: var(--space-sm);
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: var(--space-lg);
+      border-radius: var(--radius-2xl);
+      background: rgba(30, 41, 59, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all var(--transition-medium);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(14, 165, 233, 0.3);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.1), var(--shadow-glow);
+    }
+    
+    .stat-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--space-sm);
+      background: var(--gradient-primary);
+      border-radius: var(--radius-full);
+      font-size: 1.5rem;
+      color: white;
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: var(--space-xs);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .stat-label {
+      color: var(--dark-400);
+      font-weight: 500;
+    }
+    
+    .testimonial-card {
+      background: rgba(30, 41, 59, 0.5);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-xl);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      position: relative;
+      transition: all var(--transition-medium);
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--primary-500);
+      opacity: 0.1;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(14, 165, 233, 0.3);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.1), var(--shadow-glow);
+    }
+    
+    .testimonial-content {
+      margin-bottom: var(--space-lg);
+      position: relative;
+      z-index: 1;
+      color: var(--dark-300);
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      border: 2px solid var(--primary-500);
+    }
+    
+    .author-info h4 {
+      color: white;
+      margin-bottom: var(--space-3xs);
+    }
+    
+    .author-info p {
+      color: var(--dark-400);
+      font-size: 0.875rem;
+    }
+    
+    .testimonial-rating {
+      display: flex;
+      gap: var(--space-2xs);
+      margin-top: var(--space-sm);
+    }
+    
+    .testimonial-rating i {
+      color: #fbbf24;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--dark-400);
+      border-top: 1px solid rgba(148, 163, 184, 0.1);
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .component-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>HRADSTECH Components Library</h1>
+      <p class="subtitle">Reusable UI components for the modern redesign</p>
+    </header>
+    
+    <section>
+      <h2>Buttons</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-preview">
+            <button class="btn btn-primary">
+              <i class="fas fa-rocket"></i> Primary Button
+            </button>
+          </div>
+          <h3 class="component-title">Primary Button</h3>
+          <p class="component-description">The main call-to-action button with gradient background and hover effects.</p>
+          <div class="component-code">
+            &lt;button class="btn btn-primary"&gt;<br>
+            &nbsp;&nbsp;&lt;i class="fas fa-rocket"&gt;&lt;/i&gt; Primary Button<br>
+            &lt;/button&gt;
+          </div>
+        </div>
+        
+        <div class="component-card">
+          <div class="component-preview">
+            <button class="btn btn-secondary">
+              <i class="fas fa-cog"></i> Secondary Button
+            </button>
+          </div>
+          <h3 class="component-title">Secondary Button</h3>
+          <p class="component-description">Outlined button for secondary actions with hover fill effect.</p>
+          <div class="component-code">
+            &lt;button class="btn btn-secondary"&gt;<br>
+            &nbsp;&nbsp;&lt;i class="fas fa-cog"&gt;&lt;/i&gt; Secondary Button<br>
+            &lt;/button&gt;
+          </div>
+        </div>
+        
+        <div class="component-card">
+          <div class="component-preview">
+            <button class="btn btn-accent">
+              <i class="fas fa-star"></i> Accent Button
+            </button>
+          </div>
+          <h3 class="component-title">Accent Button</h3>
+          <p class="component-description">Purple gradient button for special actions with enhanced glow effect.</p>
+          <div class="component-code">
+            &lt;button class="btn btn-accent"&gt;<br>
+            &nbsp;&nbsp;&lt;i class="fas fa-star"&gt;&lt;/i&gt; Accent Button<br>
+            &lt;/button&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2>Cards</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-preview">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3 class="feature-title">AI Solutions</h3>
+              <p class="feature-description">Leverage artificial intelligence to automate processes and gain insights.</p>
+              <a href="#" class="feature-link">
+                Learn more <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="component-title">Feature Card</h3>
+          <p class="component-description">Interactive card with icon, title, description, and link. Includes hover animations.</p>
+          <div class="component-code">
+            &lt;div class="feature-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="feature-icon"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="fas fa-brain"&gt;&lt;/i&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;h3 class="feature-title"&gt;AI Solutions&lt;/h3&gt;<br>
+            &nbsp;&nbsp;&lt;p class="feature-description"&gt;...&lt;/p&gt;<br>
+            &nbsp;&nbsp;&lt;a href="#" class="feature-link"&gt;...&lt;/a&gt;<br>
+            &lt;/div&gt;
+          </div>
+        </div>
+        
+        <div class="component-card">
+          <div class="component-preview">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-value">1,254</div>
+              <div class="stat-label">Total Users</div>
+            </div>
+          </div>
+          <h3 class="component-title">Stat Card</h3>
+          <p class="component-description">Card for displaying statistics with animated hover effects.</p>
+          <div class="component-code">
+            &lt;div class="stat-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-icon"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="fas fa-users"&gt;&lt;/i&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-value"&gt;1,254&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="stat-label"&gt;Total Users&lt;/div&gt;<br>
+            &lt;/div&gt;
+          </div>
+        </div>
+        
+        <div class="component-card">
+          <div class="component-preview">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>Exceptional service and innovative solutions that transformed our business operations.</p>
+              </div>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Johnson" class="author-avatar">
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>CTO, TechCorp</p>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <h3 class="component-title">Testimonial Card</h3>
+          <p class="component-description">Client testimonial with avatar, rating, and quote styling.</p>
+          <div class="component-code">
+            &lt;div class="testimonial-card"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="testimonial-content"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="testimonial-author"&gt;...&lt;/div&gt;<br>
+            &nbsp;&nbsp;&lt;div class="testimonial-rating"&gt;...&lt;/div&gt;<br>
+            &lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2>Navigation</h2>
+      <div class="component-grid">
+        <div class="component-card">
+          <div class="component-preview">
+            <div style="width: 100%; background: rgba(15, 23, 42, 0.8); padding: 1rem; border-radius: var(--radius-lg);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 700; color: white;">
+                  <span>HRADSTECH</span>
+                  <span style="background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">SOLUTIONS</span>
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                  <a href="#" style="color: var(--dark-300); text-decoration: none; font-weight: 500; position: relative; padding: 0.5rem 0;">Solutions</a>
+                  <a href="#" style="color: var(--dark-300); text-decoration: none; font-weight: 500; position: relative; padding: 0.5rem 0;">Products</a>
+                  <a href="#" style="color: var(--dark-300); text-decoration: none; font-weight: 500; position: relative; padding: 0.5rem 0;">Contact</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3 class="component-title">Main Navigation</h3>
+          <p class="component-description">Fixed header navigation with gradient logo and hover effects.</p>
+          <div class="component-code">
+            &lt;header class="navbar"&gt;<br>
+            &nbsp;&nbsp;&lt;div class="nav-container"&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="#" class="logo"&gt;...&lt;/a&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;nav&gt;...&lt;/nav&gt;<br>
+            &nbsp;&nbsp;&lt;/div&gt;<br>
+            &lt;/header&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <p>HRADSTECH Components Library &copy; 2025</p>
+      <p>This library contains all reusable components for the website redesign.</p>
+    </footer>
+  </div>
+</body>
+</html>
