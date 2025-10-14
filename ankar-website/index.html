@@ -324,7 +324,7 @@
     }
     
     .nav-character.animate-slide-in {
-      animation: slideInLeft 1s ease-out forwards; /* Slower animation (1s instead of 0.5s) */
+      animation: slideInLeft 1.5s ease-out forwards; /* Even slower animation (1.5s instead of 1s) */
       opacity: 0;
     }
     
@@ -671,72 +671,6 @@
     
     .studio-image:hover .overlay {
       opacity: 1;
-    }
-    
-    /* Team Section */
-    .team {
-      position: relative;
-      padding: 6rem 0;
-      background: var(--surface-secondary);
-    }
-    
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .team-member {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: var(--radius-xl);
-      padding: 2rem;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .team-member:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--accent);
-    }
-    
-    .team-photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      margin: 0 auto 1.5rem;
-      overflow: hidden;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 20px rgba(109, 40, 217, 0.5);
-    }
-    
-    .team-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .team-name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text-primary);
-    }
-    
-    .team-role {
-      color: var(--accent-light);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .team-bio {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.7;
     }
     
     /* Products Section */
@@ -1330,12 +1264,7 @@
             </div>
             <span class="nav-text">Studio</span>
           </a>
-          <a href="#team" class="nav-link flex flex-col items-center text-center">
-            <div class="nav-character mb-1 relative">
-              <i class="fas fa-users character-icon text-green-500"></i>
-            </div>
-            <span class="nav-text">Team</span>
-          </a>
+
           
           <!-- Products Dropdown -->
           <div class="relative group">
@@ -1390,11 +1319,11 @@
             </div>
             <span class="nav-text">Careers</span>
           </a>
-          <a href="#contact" class="nav-link flex flex-col items-center text-center">
+          <a href="#pricing" class="nav-link flex flex-col items-center text-center">
             <div class="nav-character mb-1 relative">
-              <i class="fas fa-envelope character-icon text-indigo-500"></i>
+              <i class="fas fa-tags character-icon text-indigo-500"></i>
             </div>
-            <span class="nav-text">Contact</span>
+            <span class="nav-text">Pricing</span>
           </a>
         </nav>
         
@@ -1422,20 +1351,19 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="hero-content">
           <h1 class="hero-title">
-            Digital Innovation <span class="hero-highlight">Studio</span>
+            Professional <span class="hero-highlight">Web Solutions</span>
           </h1>
           <p class="hero-subtitle">
-            We're redefining how businesses engage, connect, and create value through cutting-edge software solutions. 
-            From AI agents to HR platforms and custom web applications, we build the future of digital transformation.
+            We create stunning websites and powerful web applications that drive results — fast, affordable, and perfectly tailored to your business needs.
           </p>
           <div class="hero-buttons">
-            <a href="#products" class="btn-primary">
-              <i class="fas fa-rocket"></i>
-              Explore Solutions
+            <a href="#pricing" class="btn-primary">
+              <i class="fas fa-pound-sign"></i>
+              View Pricing Plans
             </a>
-            <a href="#about" class="btn-secondary">
-              <i class="fas fa-play"></i>
-              Our Story
+            <a href="#pricing" class="btn-secondary">
+              <i class="fas fa-bolt"></i>
+              Get Started Now
             </a>
           </div>
         </div>
@@ -1445,46 +1373,293 @@
           <div class="hero-cube">
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-robot"></i>
-                <h3>AI Solutions</h3>
-                <p>Intelligent Automation</p>
+                <i class="fas fa-laptop-code"></i>
+                <h3>Custom Websites</h3>
+                <p>From £99 Only</p>
               </div>
             </div>
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-users"></i>
-                <h3>HR Platforms</h3>
-                <p>Smart Management</p>
+                <i class="fas fa-shopping-cart"></i>
+                <h3>eCommerce Sites</h3>
+                <p>From £199 Only</p>
               </div>
             </div>
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-mobile-alt"></i>
                 <h3>Web Apps</h3>
-                <p>Custom Development</p>
+                <p>From £399 Only</p>
               </div>
             </div>
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-chart-line"></i>
-                <h3>Analytics</h3>
-                <p>Data Insights</p>
+                <i class="fas fa-rocket"></i>
+                <h3>Fast Delivery</h3>
+                <p>In Just 7 Days</p>
               </div>
             </div>
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud</h3>
-                <p>Scalable Infrastructure</p>
+                <i class="fas fa-sync-alt"></i>
+                <h3>Redesign Service</h3>
+                <p>Modernize Your Site</p>
               </div>
             </div>
             <div class="hero-cube-face">
               <div class="hero-cube-content">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Security</h3>
-                <p>Enterprise Protection</p>
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Always Here For You</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Website Services Section -->
+  <section id="pricing" class="py-16 bg-gradient-to-r from-purple-900/30 to-indigo-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Hero Title Section -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Bring Your Business Online — Fast, Affordable & Professional
+        </h2>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+          Get a fully responsive website or web application for your business in less than a week.
+          We design, develop, and deliver high-quality sites at prices that suit your budget.
+          No hidden charges. Just reliable results.
+        </p>
+        <a href="#contact" class="btn-primary text-lg px-8 py-4">
+          <i class="fas fa-comment-dollar mr-2"></i>
+          Get a Free Quote
+        </a>
+      </div>
+
+      <!-- What We Offer Section -->
+      <div class="mb-20">
+        <h3 class="text-3xl font-bold text-white text-center mb-12">Our Services</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-paint-brush text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">Custom Website Design</h4>
+            <p class="text-gray-200">Beautiful, responsive websites tailored to your brand and business needs.</p>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-laptop-code text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">Web Applications</h4>
+            <p class="text-gray-200">Business dashboards, portals, and CRMs to streamline your operations.</p>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-shopping-cart text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">eCommerce Development</h4>
+            <p class="text-gray-200">Complete online stores with secure payment processing and inventory management.</p>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-palette text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">Logo & Branding</h4>
+            <p class="text-gray-200">Professional branding solutions to establish your unique identity.</p>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-sync-alt text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">Website Redesign</h4>
+            <p class="text-gray-200">Modernize your existing website with contemporary design and functionality.</p>
+          </div>
+          
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-purple-400 transition-all">
+            <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-4">
+              <i class="fas fa-clipboard-list text-white text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white mb-3">HoPlan</h4>
+            <p class="text-gray-200">Strategic planning and project management for your digital initiatives.</p>
+          </div>
+        </div>
+
+        <!-- Pricing Plans -->
+        <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 mb-16">
+          <h3 class="text-3xl font-bold text-white text-center mb-2">Affordable Plans for Every Business</h3>
+          <p class="text-center text-gray-200 mb-10">Need something custom? We'll tailor it for your business — just tell us your idea.</p>
+          
+          <div class="grid md:grid-cols-3 gap-8 mb-10">
+            <!-- Starter Plan -->
+            <div class="bg-gradient-to-br from-purple-900/50 to-indigo-900/50 rounded-2xl p-6 border border-purple-400/30">
+              <h4 class="text-2xl font-bold text-white mb-2">Starter Website From</h4>
+              <div class="text-3xl font-bold text-purple-400 mb-4">£99</div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  1–3 Pages
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Mobile Friendly
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Contact Form
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  SEO-ready
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-clock text-purple-400 mr-2"></i>
+                  Delivery in 3 Days
+                </li>
+              </ul>
+              <a href="#contact" class="btn-secondary w-full justify-center" onclick="populateContactForm('Starter Website', '£99')">
+                Select Plan
+              </a>
+            </div>
+            
+            <!-- Standard Plan -->
+            <div class="bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-2xl p-6 border-2 border-blue-400 relative">
+              <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                MOST POPULAR
+              </div>
+              <h4 class="text-2xl font-bold text-white mb-2">Standard Business Site From</h4>
+              <div class="text-3xl font-bold text-blue-400 mb-4">£199</div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  5–7 Pages
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Custom Design
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Hosting Setup
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Analytics Integration
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-clock text-blue-400 mr-2"></i>
+                  Delivery in 5 Days
+                </li>
+              </ul>
+              <a href="#contact" class="btn-primary w-full justify-center" onclick="populateContactForm('Standard Business Site', '£199')">
+                Select Plan
+              </a>
+            </div>
+            
+            <!-- Pro Plan -->
+            <div class="bg-gradient-to-br from-indigo-900/50 to-purple-900/50 rounded-2xl p-6 border border-indigo-400/30">
+              <h4 class="text-2xl font-bold text-white mb-2">Pro Web App From</h4>
+              <div class="text-3xl font-bold text-indigo-400 mb-4">£399</div>
+              <ul class="space-y-3 mb-6">
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Full Web App
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Admin Panel
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  Database Integration
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                  API Integration
+                </li>
+                <li class="flex items-center text-gray-200">
+                  <i class="fas fa-clock text-indigo-400 mr-2"></i>
+                  Delivery in 7 Days
+                </li>
+              </ul>
+              <a href="#contact" class="btn-secondary w-full justify-center" onclick="populateContactForm('Pro Web App', '£399')">
+                Select Plan
+              </a>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <p class="text-gray-200 mb-6">Perfect for startups, small businesses, and professionals who want to go digital fast.</p>
+            <a href="#portfolio" class="btn-primary">
+              <i class="fas fa-images mr-2"></i>
+              View Portfolio
+            </a>
+          </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="text-center">
+          <h3 class="text-3xl font-bold text-white mb-12">Why Choose HRADS Tech Solutions</h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <i class="fas fa-rocket text-2xl text-purple-400 mb-3"></i>
+              <h4 class="font-semibold text-white mb-2">Fast Delivery</h4>
+              <p class="text-sm text-gray-200">Websites ready in less than a week</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <i class="fas fa-pound-sign text-2xl text-green-400 mb-3"></i>
+              <h4 class="font-semibold text-white mb-2">Affordable Pricing</h4>
+              <p class="text-sm text-gray-200">Clear and transparent packages</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <i class="fas fa-user-tie text-2xl text-blue-400 mb-3"></i>
+              <h4 class="font-semibold text-white mb-2">Expert Team</h4>
+              <p class="text-sm text-gray-200">Skilled in modern frameworks</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <i class="fas fa-shield-alt text-2xl text-indigo-400 mb-3"></i>
+              <h4 class="font-semibold text-white mb-2">Secure Hosting</h4>
+              <p class="text-sm text-gray-200">Every site is HTTPS protected</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+              <i class="fas fa-thumbs-up text-2xl text-yellow-400 mb-3"></i>
+              <h4 class="font-semibold text-white mb-2">Satisfaction Guarantee</h4>
+              <p class="text-sm text-gray-200">100% satisfaction guaranteed</p>
+            </div>
+          </div>
+          
+          <a href="#contact" class="btn-primary text-lg px-8 py-4">
+            <i class="fas fa-headset mr-2"></i>
+            Get a Free Consultation
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-3xl p-12 text-center border border-white/10">
+        <h3 class="text-3xl font-bold text-white mb-6">Let's Build Something Amazing Together!</h3>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+          <div class="flex items-center">
+            <i class="fas fa-globe text-purple-400 text-2xl mr-3"></i>
+            <span class="text-white text-lg">Website: <a href="https://hradstech.co.uk" class="text-purple-300 hover:text-purple-200">hradstech.co.uk</a></span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope text-purple-400 text-2xl mr-3"></i>
+            <span class="text-white text-lg">Email: <a href="mailto:info@hradstech.co.uk" class="text-purple-300 hover:text-purple-200">info@hradstech.co.uk</a></span>
+          </div>
+          <div class="flex items-center">
+            <i class="fab fa-whatsapp text-purple-400 text-2xl mr-3"></i>
+            <span class="text-white text-lg">WhatsApp: <a href="https://wa.me/447767946772" class="text-purple-300 hover:text-purple-200">+44 07767946772</a></span>
           </div>
         </div>
       </div>
@@ -1593,72 +1768,6 @@
           <div class="overlay">
             <h3 class="text-white text-xl font-bold">Relaxation Zone</h3>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section id="team" class="team">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="section-title">Leadership Team</h2>
-        <p class="section-subtitle mx-auto">
-          Powered by expert insight from industry veterans who helped shape the digital landscape
-        </p>
-      </div>
-      
-      <div class="team-grid">
-        <!-- Team Member 1 -->
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="CEO & Co-founder">
-          </div>
-          <h3 class="team-name">Robert Towles</h3>
-          <div class="team-role">CEO & Co-founder</div>
-          <p class="team-bio">
-            Industry veteran with 15+ years leading mobile gaming and digital innovation. 
-            Formerly led creation of top franchises at major tech companies.
-          </p>
-        </div>
-        
-        <!-- Team Member 2 -->
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="CTO">
-          </div>
-          <h3 class="team-name">Channing Corn</h3>
-          <div class="team-role">Chief Technology Officer</div>
-          <p class="team-bio">
-            Technology visionary with expertise in scalable architecture and emerging technologies. 
-            Led development at top tech companies across multiple industries.
-          </p>
-        </div>
-        
-        <!-- Team Member 3 -->
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="CCO & Co-Founder">
-          </div>
-          <h3 class="team-name">Josh Gause</h3>
-          <div class="team-role">CCO & Co-Founder</div>
-          <p class="team-bio">
-            Creative director with a passion for user experience and product design. 
-            Shaped the vision for multiple award-winning digital products.
-          </p>
-        </div>
-        
-        <!-- Team Member 4 -->
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80" alt="Chief Operating Officer">
-          </div>
-          <h3 class="team-name">Lisa Bunday</h3>
-          <div class="team-role">Chief Operating Officer</div>
-          <p class="team-bio">
-            Operations expert with a track record of scaling high-growth technology companies. 
-            Brings strategic leadership to drive organizational excellence.
-          </p>
         </div>
       </div>
     </div>
@@ -1784,6 +1893,33 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            About <span class="text-blue-600">Us</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            HRADSTECH SOLUTIONS is a leading provider of innovative software solutions and web development services. Founded in 2018, we've grown to become a trusted partner for businesses of all sizes, delivering high-quality results that exceed expectations.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#services" class="btn-primary">
+              <i class="fas fa-arrow-right"></i>
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <img src="https://images.unsplash.com/photo-1498050108023-a75da447a3f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+               alt="HRADSTECH SOLUTIONS Team" 
+               class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Careers Section -->
   <section id="careers" class="py-24" style="background: var(--surface-secondary);">
     <div class="max-w-7xl mx-auto px-6">
@@ -1800,12 +1936,6 @@
             <i class="fas fa-search"></i>
             View Open Positions
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
           <a href="#career-benefits" class="btn-secondary">
             <i class="fas fa-heart"></i>
             Why Work With Us
@@ -2155,13 +2285,18 @@
               </div>
             </div>
             
+
+            
             <div class="flex items-start space-x-4">
-              <div class="w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-phone text-purple-400 text-lg"></i>
+              <div class="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center flex-shrink-0 shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105">
+                <i class="fab fa-whatsapp text-white text-2xl"></i>
               </div>
               <div>
-                <h4 class="font-semibold text-white mb-1">WhatsApp us</h4>
-                <p class="text-gray-300">+44 07767946772</p>
+                <h4 class="font-semibold text-white mb-1">WhatsApp Support</h4>
+                <a href="https://wa.me/447767946772?text=Hi%20HRADSTech%20Solutions,%20I%20would%20like%20to%20discuss%20my%20project%20with%20you." target="_blank" class="text-green-400 hover:text-green-300 font-medium flex items-center">
+                  <i class="fab fa-whatsapp mr-2"></i>
+                  Message Us Directly
+                </a>
               </div>
             </div>
             
@@ -2252,7 +2387,6 @@
           <h4 class="footer-heading">Company</h4>
           <ul class="footer-links">
             <li><a href="#about">About Us</a></li>
-            <li><a href="#team">Our Team</a></li>
             <li><a href="#studio">Studio</a></li>
             <li><a href="#careers">Careers</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2363,7 +2497,7 @@
         reset: false
       });
       
-      ScrollReveal().reveal('.product-card, .team-member, .stat-card, .studio-image', {
+      ScrollReveal().reveal('.product-card, .stat-card, .studio-image', {
         delay: 100,
         distance: '30px',
         duration: 800,
@@ -2385,13 +2519,37 @@
           setTimeout(function() {
             character.style.animationDelay = '0s'; // Reset any existing delay
             character.classList.add('animate-slide-in');
-          }, index * 300); // 300ms delay between each character (slower)
+          }, index * 500); // 500ms delay between each character (even slower)
         });
       }, 500); // Start animation after 500ms
     });
     
     // Initialize ScrollReveal
     initScrollReveal();
+    
+    // Function to populate contact form with selected plan
+    function populateContactForm(planName, planPrice) {
+      // Wait for the page to scroll to the contact section
+      setTimeout(function() {
+        // Set the subject field
+        const subjectField = document.querySelector('input[name="subject"]');
+        if (subjectField) {
+          subjectField.value = 'Website Plan Inquiry: ' + planName + ' (' + planPrice + ')';
+        }
+        
+        // Set the message field
+        const messageField = document.querySelector('textarea[name="message"]');
+        if (messageField) {
+          messageField.value = 'I am interested in the ' + planName + ' plan priced at ' + planPrice + '. Please provide more details and help me get started.\n\nAdditional information:\n';
+        }
+        
+        // Scroll to the form for better UX
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+          contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 1000); // Wait for scroll animation to complete
+    }
 
   </script>
 </body>
