@@ -993,6 +993,71 @@
       transform: translateX(3px);
     }
     
+    /* Chat Bot Enhancements */
+    /* Fix global `.absolute { pointer-events: none; }` preventing chat clicks */
+    #chat-assistant .absolute,
+    #chat-container,
+    #chat-container * {
+      pointer-events: auto;
+    }
+
+    .scrollbar-thin {
+      scrollbar-width: thin;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-track {
+      background: #374151;
+      border-radius: 3px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background: #6b7280;
+      border-radius: 3px;
+    }
+    
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+      background: #9ca3af;
+    }
+    
+    .animate-fade-in {
+      animation: fadeInUp 0.3s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Chat input focus enhancements */
+    #chat-input:focus {
+      transform: scale(1.02);
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+    }
+    
+    /* Mobile optimizations */
+    @media (max-width: 640px) {
+      #chat-container {
+        width: calc(100vw - 2rem);
+        right: 1rem;
+        left: 1rem;
+        max-height: calc(100vh - 100px);
+      }
+      
+      #chat-messages {
+        max-height: calc(100vh - 200px);
+      }
+    }
+    
     .copyright {
       text-align: center;
       padding-top: 2rem;
@@ -1898,10 +1963,10 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16">
         <div class="order-2 lg:order-1">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span class="text-blue-600">Us</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            About <span class="text-blue-400">Us</span>
           </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             HRADSTECH SOLUTIONS is a leading provider of innovative software solutions and web development services. Founded in 2018, we've grown to become a trusted partner for businesses of all sizes, delivering high-quality results that exceed expectations.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1925,10 +1990,10 @@
     <div class="max-w-7xl mx-auto px-6">
       <!-- Careers Hero -->
       <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Build Your <span class="text-blue-600">Future</span> With Us
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Build Your <span class="text-blue-400">Future</span> With Us
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+        <p class="text-xl text-white max-w-3xl mx-auto leading-relaxed mb-8">
           Whether you're passionate about technology, people, creativity, or innovation, there's room for you to develop an exciting career with us. Join our team and make an impact that matters.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1961,38 +2026,38 @@
           <div class="w-20 h-20 mx-auto bg-blue-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
             <i class="fas fa-code text-2xl text-blue-600"></i>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Technology</h3>
-          <p class="text-gray-600 text-sm">Software development, AI, data science, and engineering roles</p>
+          <h3 class="text-lg font-semibold text-white mb-2">Technology</h3>
+          <p class="text-white text-sm">Software development, AI, data science, and engineering roles</p>
         </div>
         
         <div class="text-center group">
           <div class="w-20 h-20 mx-auto bg-green-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
             <i class="fas fa-users text-2xl text-green-600"></i>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Consulting</h3>
-          <p class="text-gray-600 text-sm">Business strategy, digital transformation, and client solutions</p>
+          <h3 class="text-lg font-semibold text-white mb-2">Consulting</h3>
+          <p class="text-white text-sm">Business strategy, digital transformation, and client solutions</p>
         </div>
         
         <div class="text-center group">
           <div class="w-20 h-20 mx-auto bg-purple-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
             <i class="fas fa-chart-line text-2xl text-purple-600"></i>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Analytics</h3>
-          <p class="text-gray-600 text-sm">Data analysis, business intelligence, and insights</p>
+          <h3 class="text-lg font-semibold text-white mb-2">Analytics</h3>
+          <p class="text-white text-sm">Data analysis, business intelligence, and insights</p>
         </div>
         
         <div class="text-center group">
           <div class="w-20 h-20 mx-auto bg-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-200 transition-colors">
             <i class="fas fa-cogs text-2xl text-orange-600"></i>
           </div>
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Operations</h3>
-          <p class="text-gray-600 text-sm">Project management, support, and business operations</p>
+          <h3 class="text-lg font-semibold text-white mb-2">Operations</h3>
+          <p class="text-white text-sm">Project management, support, and business operations</p>
         </div>
       </div>
 
       <!-- Featured Opportunities -->
       <div id="career-opportunities" class="mb-20">
-        <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Featured Opportunities</h3>
+        <h3 class="text-3xl font-bold text-white text-center mb-12">Featured Opportunities</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Job Card 1 -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
@@ -2288,14 +2353,14 @@
 
             
             <div class="flex items-start space-x-4">
-              <div class="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center flex-shrink-0 shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105">
-                <i class="fab fa-whatsapp text-white text-2xl"></i>
+              <div class="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center flex-shrink-0 shadow-lg hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-110">
+                <i class="fab fa-whatsapp text-white text-3xl"></i>
               </div>
               <div>
                 <h4 class="font-semibold text-white mb-1">WhatsApp Support</h4>
                 <a href="https://wa.me/447767946772?text=Hi%20HRADSTech%20Solutions,%20I%20would%20like%20to%20discuss%20my%20project%20with%20you." target="_blank" class="text-green-400 hover:text-green-300 font-medium flex items-center">
                   <i class="fab fa-whatsapp mr-2"></i>
-                  Message Us Directly
+                  Chat with us on WhatsApp
                 </a>
               </div>
             </div>
@@ -2552,5 +2617,730 @@
     }
 
   </script>
-</body>
-</html>
+  
+  <!-- AI Chat Assistant -->
+  <div id="chat-assistant" class="fixed bottom-6 right-6 z-50">
+    <!-- Chat Toggle Button -->
+    <button id="chat-toggle" class="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-purple-300" aria-label="Open chat assistant">
+      <i class="fas fa-robot text-xl"></i>
+    </button>
+    
+    <!-- Chat Container -->
+    <div id="chat-container" class="absolute bottom-20 right-0 w-96 h-[480px] bg-gray-900 rounded-2xl shadow-2xl border border-gray-700 flex flex-col opacity-0 invisible transform translate-y-4 transition-all duration-300 z-50" style="max-height: calc(100vh - 120px);" role="dialog" aria-labelledby="chat-title" aria-hidden="true" tabindex="-1">
+      <!-- Chat Header -->
+      <div class="bg-gradient-to-r from-purple-900 to-indigo-900 p-3 rounded-t-2xl flex items-center justify-between flex-shrink-0 sticky top-0 z-10">
+        <div class="flex items-center">
+          <div class="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 flex items-center justify-center mr-2">
+            <i class="fas fa-robot text-white text-xs"></i>
+          </div>
+          <div>
+            <h3 id="chat-title" class="font-bold text-white text-sm">HRADSTech AI</h3>
+            <p class="text-xs text-purple-200">Online now</p>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <button id="chat-close" class="text-gray-300 hover:text-white text-sm p-1 rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white/30" aria-label="Close chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Chat Messages -->
+      <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-800 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-700" style="overscroll-behavior: contain;">
+        <div class="mb-4">
+          <div class="inline-block bg-gradient-to-r from-purple-700 to-indigo-700 text-white rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-xs shadow-lg">
+            <div class="flex items-start">
+              <div class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                <i class="fas fa-robot text-white text-xs"></i>
+              </div>
+              <div>
+                <p class="font-medium mb-1">Hello! I'm your HRADSTech AI Assistant.</p>
+                <p class="text-purple-100">How can I help you today?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-4">
+          <div class="inline-block bg-gradient-to-r from-purple-700 to-indigo-700 text-white rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-xs shadow-lg">
+            <p class="text-purple-100">I'm ready to chat! Ask me about our services, pricing, or how to get in touch.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chat Input -->
+      <div class="p-4 border-t border-gray-700 bg-gray-800 flex-shrink-0">
+        <div class="flex items-end space-x-2">
+          <div class="flex-1 relative">
+            <input 
+              type="text" 
+              id="chat-input" 
+              placeholder="Type your message..." 
+              class="w-full bg-gray-700 text-white rounded-2xl px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-purple-500 border-2 border-transparent focus:border-purple-500 transition-all duration-200 resize-none" 
+              autocomplete="off"
+              spellcheck="true"
+              maxlength="500"
+              aria-label="Type your message"
+            >
+            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">
+              <span id="char-count">0/500</span>
+            </div>
+          </div>
+          <button 
+            id="chat-send" 
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-3 rounded-2xl hover:opacity-90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-300 disabled:opacity-50 disabled:cursor-not-allowed" 
+            aria-label="Send message"
+          >
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="mt-2 text-xs text-gray-400 text-center">
+          Press Enter to send • Shift+Enter for new line
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // AI Chat Assistant - Professional Implementation with 30 years of frontend expertise
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatContainer = document.getElementById('chat-container');
+      const chatClose = document.getElementById('chat-close');
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
+      const chatMessages = document.getElementById('chat-messages');
+      const charCount = document.getElementById('char-count');
+      
+      let isChatOpen = false;
+      let isTyping = false;
+      
+      // Initialize send button state after a short delay to ensure DOM is ready
+      setTimeout(() => {
+        chatSend.disabled = true;
+        console.log('Send button initialized as disabled');
+      }, 100);
+      
+      // Enhanced focus management - the core of the solution
+      function ensureInputFocus() {
+        if (isChatOpen && chatInput) {
+          // Force focus with multiple methods
+          chatInput.focus();
+          chatInput.click();
+          
+          // Ensure cursor is at the end
+          setTimeout(() => {
+            const length = chatInput.value.length;
+            chatInput.setSelectionRange(length, length);
+            // Double-check focus
+            if (document.activeElement !== chatInput) {
+              chatInput.focus();
+            }
+          }, 10);
+        }
+      }
+      
+      // Toggle chat visibility with proper ARIA management
+      function toggleChat() {
+        isChatOpen = !isChatOpen;
+        
+        if (isChatOpen) {
+          chatContainer.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+          chatContainer.classList.add('opacity-100', 'visible', 'translate-y-0');
+          chatContainer.setAttribute('aria-hidden', 'false');
+          
+          // Focus management with multiple fallbacks
+          setTimeout(ensureInputFocus, 150);
+          setTimeout(ensureInputFocus, 300);
+          
+          // Prevent body scroll when chat is open on mobile
+          document.body.style.overflow = 'hidden';
+        } else {
+          chatContainer.classList.add('opacity-0', 'invisible', 'translate-y-4');
+          chatContainer.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          chatContainer.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+      
+      // Close chat function
+      function closeChat() {
+        if (isChatOpen) {
+          isChatOpen = false;
+          isContactFlowActive = false;
+          chatContainer.classList.add('opacity-0', 'invisible', 'translate-y-4');
+          chatContainer.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          chatContainer.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+      
+      // Event listeners
+      chatToggle.addEventListener('click', toggleChat);
+      chatClose.addEventListener('click', closeChat);
+      
+      // Critical: Focus management for entire chat container
+      chatContainer.addEventListener('click', function(e) {
+        // Don't focus if clicking on buttons or input itself
+        if (e.target === chatInput || 
+            e.target === chatSend || 
+            e.target === chatClose || 
+            e.target.closest('button') ||
+            e.target.closest('input')) {
+          return;
+        }
+        
+        // Focus input for any other click in the chat container
+        e.preventDefault();
+        e.stopPropagation();
+        ensureInputFocus();
+      });
+      
+      // Additional focus management for messages area
+      chatMessages.addEventListener('click', function(e) {
+        if (e.target === chatMessages || e.target.closest('.mb-4')) {
+          e.preventDefault();
+          e.stopPropagation();
+          ensureInputFocus();
+        }
+      });
+      
+      // Focus on input container click
+      document.querySelector('#chat-input').parentElement.addEventListener('click', function(e) {
+        if (e.target.closest('#chat-send') || e.target.closest('#chat-close')) {
+          return; // don't interfere with button clicks
+        }
+        if (e.target !== chatInput) {
+          ensureInputFocus();
+        }
+      });
+      
+      // Global click handler to refocus when clicking back into chat
+      document.addEventListener('click', function(e) {
+        // Only handle if chat is open and click is inside chat container
+        if (isChatOpen && chatContainer.contains(e.target)) {
+          // Don't interfere with input or button clicks
+          if (e.target !== chatInput && 
+              e.target !== chatSend && 
+              e.target !== chatClose && 
+              !e.target.closest('button') &&
+              !e.target.closest('input')) {
+            setTimeout(ensureInputFocus, 50);
+          }
+        }
+      });
+      
+      // Additional focus trigger for any click in chat area
+      chatContainer.addEventListener('mousedown', function(e) {
+        if (e.target.closest('#chat-send') || e.target.closest('#chat-close')) {
+          return; // allow clicks to go through
+        }
+        if (e.target !== chatInput) {
+          setTimeout(ensureInputFocus, 100);
+        }
+      });
+      
+      // Most aggressive focus management - handle any interaction with chat
+      chatContainer.addEventListener('click', function(e) {
+        if (e.target.closest('#chat-send') || e.target.closest('#chat-close')) {
+          return; // don't hijack send/close clicks
+        }
+        setTimeout(() => {
+          if (isChatOpen && document.activeElement !== chatInput) {
+            ensureInputFocus();
+          }
+        }, 50);
+      });
+      
+      // Also handle mouseenter to ensure focus when hovering over chat
+      chatContainer.addEventListener('mouseenter', function() {
+        if (isChatOpen) {
+          setTimeout(ensureInputFocus, 200);
+        }
+      });
+      
+      // Enhanced input handling with character count
+      function updateCharCount() {
+        const count = chatInput.value.length;
+        charCount.textContent = `${count}/500`;
+        
+        // Enable/disable send button - only disable if empty or over limit
+        const shouldDisable = count === 0 || count > 500;
+        chatSend.disabled = shouldDisable;
+        console.log('Character count:', count, 'Should disable send:', shouldDisable);
+        
+        // Visual feedback for character limit
+        if (count > 450) {
+          charCount.classList.add('text-yellow-400');
+        } else if (count > 500) {
+          charCount.classList.add('text-red-400');
+        } else {
+          charCount.classList.remove('text-yellow-400', 'text-red-400');
+        }
+      }
+      
+      // Simplified input event listeners
+      chatInput.addEventListener('input', function() {
+        console.log('Input event triggered');
+        const count = chatInput.value.length;
+        console.log('Character count:', count);
+        // Simple enable/disable logic
+        chatSend.disabled = count === 0;
+        console.log('Send button disabled:', chatSend.disabled);
+        // Update character count display
+        charCount.textContent = `${count}/500`;
+      });
+      chatInput.addEventListener('focus', function() {
+        this.classList.add('ring-2', 'ring-purple-500');
+        console.log('Chat input focused'); // Debug log
+      });
+      chatInput.addEventListener('blur', function() {
+        this.classList.remove('ring-2', 'ring-purple-500');
+        console.log('Chat input blurred'); // Debug log
+      });
+      
+      // Add visual feedback when input is focused
+      chatInput.addEventListener('focus', function() {
+        this.parentElement.style.borderColor = '#8b5cf6';
+        this.parentElement.style.boxShadow = '0 0 0 3px rgba(139, 92, 246, 0.1)';
+      });
+      
+      chatInput.addEventListener('blur', function() {
+        this.parentElement.style.borderColor = 'transparent';
+        this.parentElement.style.boxShadow = 'none';
+      });
+      
+      // Simplified keyboard handling
+      chatInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          console.log('Enter key pressed');
+          e.preventDefault();
+          // Direct simple send implementation
+          const message = chatInput.value.trim();
+          if (message.length > 0) {
+            console.log('Sending message via Enter:', message);
+            // Add user message directly
+            addMessage(message, 'user');
+            // Clear input
+            chatInput.value = '';
+            // Re-enable button immediately
+            chatSend.disabled = false;
+            // Update character count
+            updateCharCount();
+            // Generate AI response
+            setTimeout(() => {
+              const response = getAIResponse(message);
+              addMessage(response, 'ai');
+            }, 500);
+          }
+        } else if (e.key === 'Escape') {
+          closeChat();
+        }
+      });
+      
+      // Simplified send button click - minimal implementation
+      chatSend.addEventListener('click', function(e) {
+        console.log('Send button clicked');
+        e.preventDefault();
+        e.stopPropagation();
+        // Simple direct call without complex checks
+        const message = chatInput.value.trim();
+        if (message.length > 0) {
+          console.log('Sending message:', message);
+          // Add user message directly
+          addMessage(message, 'user');
+          // Clear input
+          chatInput.value = '';
+          // Re-enable button immediately
+          chatSend.disabled = false;
+          // Update character count
+          updateCharCount();
+          // Generate AI response
+          setTimeout(() => {
+            const response = getAIResponse(message);
+            addMessage(response, 'ai');
+          }, 500);
+        }
+      });
+      
+      // Professional scroll management
+      function setupScrollBehavior() {
+        let isScrolling = false;
+        let scrollTimeout;
+        
+        chatMessages.addEventListener('scroll', function() {
+          isScrolling = true;
+          clearTimeout(scrollTimeout);
+          
+          scrollTimeout = setTimeout(() => {
+            isScrolling = false;
+          }, 150);
+        });
+        
+        // Prevent scroll chaining to parent elements
+        chatMessages.addEventListener('wheel', function(e) {
+          const { scrollTop, scrollHeight, clientHeight } = this;
+          const isAtTop = scrollTop === 0;
+          const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+          
+          // Allow scrolling within bounds
+          if ((e.deltaY < 0 && !isAtTop) || (e.deltaY > 0 && !isAtBottom)) {
+            return; // Allow normal scrolling
+          }
+          
+          // Prevent scroll chaining when at boundaries
+          e.preventDefault();
+          e.stopPropagation();
+        }, { passive: false });
+        
+        // Touch scroll handling for mobile
+        let startY = 0;
+        chatMessages.addEventListener('touchstart', function(e) {
+          startY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        chatMessages.addEventListener('touchmove', function(e) {
+          const currentY = e.touches[0].clientY;
+          const deltaY = startY - currentY;
+          const { scrollTop, scrollHeight, clientHeight } = this;
+          
+          const isAtTop = scrollTop === 0;
+          const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+          
+          if ((deltaY < 0 && isAtTop) || (deltaY > 0 && isAtBottom)) {
+            e.preventDefault();
+          }
+        }, { passive: false });
+      }
+      
+      setupScrollBehavior();
+      
+      // Enhanced message sending
+      function sendMessage() {
+        console.log('sendMessage function called');
+        const message = chatInput.value.trim();
+        console.log('Message:', message);
+        console.log('isTyping:', isTyping);
+        if (!message || isTyping) {
+          console.log('Message is empty or typing in progress, returning');
+          return;
+        }
+        
+        isTyping = true;
+        chatSend.disabled = true;
+        console.log('Send button disabled');
+        
+        // Add user message
+        addMessage(message, 'user');
+        
+        // Clear input and reset
+        chatInput.value = '';
+        updateCharCount();
+        
+        // Simulate typing indicator
+        const typingId = addTypingIndicator();
+        
+        // Generate AI response
+        setTimeout(() => {
+          console.log('Generating AI response');
+          removeTypingIndicator(typingId);
+          const response = getAIResponse(message);
+          addMessage(response, 'ai');
+          isTyping = false;
+          chatSend.disabled = false; // Re-enable send button
+          console.log('Send button re-enabled');
+          ensureInputFocus();
+        }, 1000 + Math.random() * 1000); // Random delay for realism
+      }
+      
+      // Enhanced message display
+      function addMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('mb-4', 'animate-fade-in');
+        
+        const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        if (sender === 'user') {
+          messageDiv.innerHTML = `
+            <div class="flex justify-end">
+              <div class="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-2xl rounded-tr-none px-4 py-3 text-sm max-w-xs shadow-lg">
+                <div class="flex items-end justify-between">
+                  <span>${escapeHtml(text)}</span>
+                  <small class="text-blue-100 ml-2 text-xs">${timestamp}</small>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          messageDiv.innerHTML = `
+            <div class="inline-block bg-gradient-to-r from-purple-700 to-indigo-700 text-white rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-xs shadow-lg">
+              <div class="flex items-start">
+                <div class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                  <i class="fas fa-robot text-white text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <p>${escapeHtml(text)}</p>
+                  <small class="text-purple-200 text-xs">${timestamp}</small>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        
+        chatMessages.appendChild(messageDiv);
+        smoothScrollToBottom();
+      }
+      
+      // Typing indicator
+      function addTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.id = 'typing-indicator';
+        typingDiv.classList.add('mb-4');
+        typingDiv.innerHTML = `
+          <div class="inline-block bg-gradient-to-r from-purple-700 to-indigo-700 text-white rounded-2xl rounded-tl-none px-4 py-3 text-sm max-w-xs shadow-lg">
+            <div class="flex items-center">
+              <div class="w-6 h-6 rounded-full bg-purple-500 flex items-center justify-center mr-2 flex-shrink-0">
+                <i class="fas fa-robot text-white text-xs"></i>
+              </div>
+              <div class="flex space-x-1">
+                <div class="w-2 h-2 bg-purple-200 rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-purple-200 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                <div class="w-2 h-2 bg-purple-200 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+              </div>
+            </div>
+          </div>
+        `;
+        chatMessages.appendChild(typingDiv);
+        smoothScrollToBottom();
+        return typingDiv.id;
+      }
+      
+      function removeTypingIndicator(id) {
+        const typingElement = document.getElementById(id);
+        if (typingElement) {
+          typingElement.remove();
+        }
+      }
+      
+      // Smooth scrolling to bottom
+      function smoothScrollToBottom() {
+        chatMessages.scrollTo({
+          top: chatMessages.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+      
+      // HTML escaping for security
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+      
+      // Enhanced AI Response Logic
+      function getAIResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Detect intent for human help or out-of-scope patterns
+        const wantsHuman = /(human|agent|representative|talk to someone|call me|contact me|speak to|reach me)/i.test(lowerMessage);
+        const outOfScope = /(don't know|not sure|unknown|out of scope|can't answer|cannot answer)/i.test(lowerMessage);
+        const leadIntent = /(quote|pricing details|proposal|project|hire|work with you|get started|more information|interested|want to know more|need help|help me|assistance)/i.test(lowerMessage);
+
+        console.log('AI Response analysis:', { wantsHuman, outOfScope, leadIntent, isContactFlowActive });
+        
+        if ((wantsHuman || outOfScope || leadIntent) && !isContactFlowActive) {
+          console.log('Starting contact flow');
+          startContactFlow();
+          return "I'd be happy to connect you with a professional from our team. Let me collect your details so our team can reach out to you.";
+        }
+
+        // More sophisticated response patterns
+        if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+          return "Hello there! 👋 I'm your HRADSTech AI Assistant. How can I help you today?";
+        } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('pricing')) {
+          return "💰 We offer three affordable pricing plans:\n• Starter Websites: £99\n• Standard Business Sites: £199\n• Pro Web Apps: £399\n\nAll plans include fast delivery in just 3-7 days!";
+        } else if (lowerMessage.includes('website') || lowerMessage.includes('web')) {
+          return "🌐 We specialize in creating stunning websites and powerful web applications that drive results. Our services include custom websites, eCommerce solutions, web applications, and site redesigns.";
+        } else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('whatsapp')) {
+          return "📞 You can reach us via:\n• WhatsApp: +44 07767946772\n• Email: info@hradstech.co.uk\n• Contact form on our website";
+        } else if (lowerMessage.includes('service')) {
+          return "🚀 We offer a full range of digital services:\n• Website Development\n• Web Applications\n• eCommerce Solutions\n• Logo & Branding\n• Site Redesigns\n• AI-Powered Solutions";
+        } else if (lowerMessage.includes('thank')) {
+          return "You're very welcome! 😊 Is there anything else I can help you with?";
+        } else if (lowerMessage.includes('name')) {
+          return "I'm the HRADSTech AI Assistant! 🤖 What's your name? I'd love to know who I'm chatting with.";
+        } else if (lowerMessage.includes('help')) {
+          return "I'm here to help! 💡 You can ask me about:\n• Our services and pricing\n• How to get started\n• Contact information\n• Technical questions\n\nWhat would you like to know?";
+        } else if (lowerMessage.includes('talk to human') || lowerMessage.includes('speak to someone') || lowerMessage.includes('connect me') || lowerMessage.includes('more info') || lowerMessage.includes('interested')) {
+          // Manually trigger contact flow
+          if (!isContactFlowActive) {
+            startContactFlow();
+            return "I'd be happy to connect you with a professional from our team. Let me collect your details so our team can reach out to you.";
+          }
+        } else {
+          const responses = [
+            "That's interesting! Can you tell me more about what you're looking for?",
+            "Great question! Our team specializes in creating digital solutions tailored to your business needs.",
+            "I'd be happy to help with that. Would you like me to connect you with a human representative?",
+            "Thanks for sharing that! Our services are designed to help businesses like yours succeed online.",
+            "I'm here to assist you. Could you provide more details about your project requirements?",
+            "That sounds exciting! Let me know how I can help you achieve your goals."
+          ];
+          return responses[Math.floor(Math.random() * responses.length)];
+        }
+      }
+      
+      // Initialize character count
+      updateCharCount();
+      
+      // Handle window resize
+      window.addEventListener('resize', function() {
+        if (isChatOpen) {
+          ensureInputFocus();
+        }
+      });
+      
+      // Handle escape key globally
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isChatOpen) {
+          closeChat();
+        }
+      });
+
+      // Guided contact flow can be started programmatically via startContactFlow()
+
+      let isContactFlowActive = false;
+      let contactData = { name: '', email: '', message: '' };
+
+      function startContactFlow() {
+        if (isTyping) return;
+        console.log('Contact flow started');
+        isContactFlowActive = true;
+        contactData = { name: '', email: '', message: '' };
+        addMessage("I'd love to connect you with a professional from our team. Let me collect your details so our team can reach out to you. May I have your full name?", 'ai');
+        ensureInputFocus();
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      // Intercept send when contact flow is active
+      const originalSendMessage = sendMessage;
+      function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        if (!isContactFlowActive) {
+          return originalSendMessage();
+        }
+
+        // In contact flow
+        addMessage(message, 'user');
+
+        if (!contactData.name) {
+          contactData.name = message;
+          addMessage(`Thanks, ${escapeHtml(contactData.name)}. What's your email address?`, 'ai');
+          chatInput.value = '';
+          updateCharCount();
+          ensureInputFocus();
+          return;
+        }
+
+        if (!contactData.email) {
+          if (!validateEmail(message)) {
+            addMessage('That email looks invalid. Please enter a valid email like name@example.com.', 'ai');
+            chatInput.value = '';
+            updateCharCount();
+            ensureInputFocus();
+            return;
+          }
+          contactData.email = message;
+          addMessage('Got it. Please type your message or inquiry.', 'ai');
+          chatInput.value = '';
+          updateCharCount();
+          ensureInputFocus();
+          return;
+        }
+
+        if (!contactData.message) {
+          contactData.message = message;
+          chatInput.value = '';
+          updateCharCount();
+
+          // Confirm and submit
+          addMessage('Submitting your details... One moment please.', 'ai');
+          submitContactData(contactData);
+          return;
+        }
+      }
+
+      // AJAX submit via FormSubmit to info@hradstech.co.uk
+      async function submitContactData({ name, email, message }) {
+        try {
+          console.log('Submitting contact data:', { name, email, message });
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('email', email);
+          formData.append('message', message);
+          formData.append('_subject', 'New Inquiry from HRADSTech Chat Assistant');
+          formData.append('_captcha', 'false');
+          formData.append('_template', 'table');
+
+          const response = await fetch('https://formsubmit.co/info@hradstech.co.uk', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          console.log('FormSubmit response:', response);
+          if (response.ok) {
+            addMessage('✅ Thanks! Your details have been sent successfully. Our team will contact you at ' + email + ' shortly.', 'ai');
+          } else {
+            addMessage('⚠️ There was an issue sending your message. Please try again or email info@hradstech.co.uk directly.', 'ai');
+          }
+        } catch (err) {
+          console.error('Error submitting contact data:', err);
+          addMessage('⚠️ Network error. Please try again later or email info@hradstech.co.uk directly.', 'ai');
+        } finally {
+          isContactFlowActive = false;
+          contactData = { name: '', email: '', message: '' };
+          ensureInputFocus();
+        }
+      }
+
+      // Optional: pluggable AI backend for smarter responses
+      async function fetchSmartAIResponse(prompt) {
+        // Hook for future integration (e.g., serverless function calling OpenAI)
+        // If backend URL is set, call it; otherwise fall back to local getAIResponse
+        const SMART_AI_URL = window.SMART_AI_URL || '';
+        if (!SMART_AI_URL) return null;
+        try {
+          const res = await fetch(SMART_AI_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt })
+          });
+          if (!res.ok) return null;
+          const data = await res.json();
+          return data?.reply || null;
+        } catch (_) {
+          return null;
+        }
+      }
+
+      // Override AI response getter to try smart backend first
+      const originalGetAIResponse = getAIResponse;
+      getAIResponse = function(message) {
+        // Try async smart response; if not available, return sync fallback
+        fetchSmartAIResponse(message).then(reply => {
+          if (reply) {
+            addMessage(reply, 'ai');
+          }
+        });
+        return originalGetAIResponse(message);
+      }
+    });
+  </script>
+  
+  </body>
+  </html>
